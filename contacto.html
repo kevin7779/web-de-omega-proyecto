@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contacto — Omega Ciberseguridad</title>
+<link rel="stylesheet" href="../css/contacto.css">
+
+
+</head>
+<body>
+<header>
+  <div>
+    <a href="index.html">Omega Ciberseguridad</a>
+    <nav aria-label="Principal"><ul><li><a href="servicios.html">Servicios</a></li><li><a href="metodo.html">Cómo trabajamos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html" aria-current="page">Contacto</a></li></ul></nav>
+  </div>
+</header>
+<main>
+<section><div><h1>Pide tu auditoría</h1><p>Cuéntanos qué necesitas revisar. Te respondemos en un día hábil.</p></div></section><section><div>
+  <div><!-- IMAGEN AQUÍ: imagen de atención al cliente / oficina en Lima
+     Guárdala como: img/contacto.jpg
+     Cuando la tengas, quita las marcas de comentario y deja:
+<img src="img/contacto.jpg" alt="Atención al cliente de Omega Ciberseguridad" width="500" height="320">
+-->
+<h2>Escríbenos</h2><ul><li>contacto@Omega.example</li><li>Lima, Perú</li></ul></div>
+  <form id="form" novalidate>
+    <div>
+      <label for="nombre">Nombre<input id="nombre" name="nombre" type="text" autocomplete="name" required></label>
+      <label for="correo">Correo<input id="correo" name="correo" type="email" autocomplete="email" required></label>
+    </div>
+    <div>
+      <label for="empresa">Empresa<input id="empresa" name="empresa" type="text" autocomplete="organization"></label>
+      <label for="servicio">Servicio<select id="servicio" name="servicio"><option>Pruebas de penetración</option><option>Auditoría de redes y firewall</option><option>Seguridad del correo y la nube</option><option>Capacitación al personal</option><option>Respuesta a incidentes</option></select></label>
+    </div>
+    <label for="mensaje">Mensaje<textarea id="mensaje" name="mensaje"></textarea></label>
+    <div><button type="submit">Solicitar auditoría</button></div>
+    <p id="estado" role="status" aria-live="polite"></p>
+  </form>
+</div></section>
+</main>
+<footer>
+  <div>
+    <span>© 2026 Omega Ciberseguridad</span>
+    <span>Pruebas siempre con autorización por escrito del cliente.</span>
+  </div>
+</footer>
+<script>
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var nombre = document.getElementById('nombre').value.trim();
+  var correo = document.getElementById('correo').value.trim();
+  var estado = document.getElementById('estado');
+  if (!nombre || !correo || correo.indexOf('@') < 1) {
+    estado.textContent = 'Escribe tu nombre y un correo válido para poder responderte.';
+    return;
+  }
+  estado.textContent = 'Recibimos tu solicitud, ' + nombre + '. Te respondemos en un día hábil.';
+  this.reset();
+});
+</script>
+</body>
+</html>
