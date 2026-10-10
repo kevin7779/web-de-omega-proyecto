@@ -680,89 +680,123 @@ main::before {
     pointer-events: none;
 }
 
-/* =====================================================
-   CELULAR
-===================================================== */
-
 @media (max-width: 750px) {
 
-    header > div {
-        flex-direction: column;
+  html, body {
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
-        gap: 20px;
-    }
+  /* ===== ENCABEZADO ===== */
+  header > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 14px 16px !important;
+  }
 
-/* ===== MENÚ ===== */
-
-nav ul {
+  /* ===== MENÚ ===== */
+  nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
-}
+    gap: 10px 18px;
+  }
 
-nav a {
+  nav a {
     position: relative;
     color: #b9c9d5;
     text-decoration: none;
     font-size: 15px;
-    transition: 0.3s;
-}
+  }
 
-/* línea debajo del menú al pasar el mouse */
-nav a:not(.btn-registrate)::after {
+  nav a.active {
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  nav a.active::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -7px;
-    width: 0;
+    width: 100%;
     height: 2px;
     background: #00c8ff;
-    transition: 0.3s;
-}
+  }
 
-nav a:hover {
-    color: #00c8ff;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-
-/* ===== PÁGINA ACTUAL (Contacto) ===== */
-
-nav a.active {
+  nav a.btn-primary {
+    background: linear-gradient(135deg, #008bd2, #00b7ff);
     color: #ffffff;
-    font-weight: bold;
-}
-
-nav a.active::after {
-    width: 100%; /* Mantiene la línea celeste encendida */
-}
-
-
-/* ===== BOTÓN REGÍSTRATE (Extremo derecho) ===== */
-
-nav a.btn-registrate {
-    background: linear-gradient(
-        135deg,
-        #008bd2,
-        #00b7ff
-    );
-    color: white;
     padding: 9px 18px;
     border-radius: 5px;
     font-weight: bold;
     box-shadow: 0 0 15px rgba(0, 183, 255, 0.3);
-    transition: 0.3s;
-}
+  }
 
-nav a.btn-registrate:hover {
-    box-shadow: 0 0 22px rgba(0, 183, 255, 0.55);
-    transform: translateY(-1px);
+  /* ===== PÁGINA: TODO EN UNA COLUMNA ===== */
+  main {
+    display: block !important;
+    width: 100% !important;
+  }
 
-}
+  main > section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  main > section > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  main h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Tarjeta "Escríbenos" y formulario, una debajo de la otra */
+  main > section:nth-of-type(2) > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  main > section:nth-of-type(2) > div > div,
+  form {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Campos del formulario apilados */
+  form > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+  }
+
+  /* ===== PIE DE PÁGINA ===== */
+  footer > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
 }
