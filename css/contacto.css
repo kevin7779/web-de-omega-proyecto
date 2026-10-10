@@ -686,28 +686,26 @@ html, body {
   overflow-x: hidden;
 } 
 
+/* --- CORRECCIÓN FINAL PARA CONTENEDOR DE CONTACTO EN MÓVILES --- */
 @media (max-width: 768px) {
-  /* 1. Asegura que el contenedor principal o grid de la página de contacto sea de una sola columna */
-  main.form-container,
-  .contacto-container,
-  .grid-contacto,
-  .form-grid {
-    display: flex !important;
-    flex-direction: column !important;
+  /* Asegura que el contenedor general de la página de contacto no desborde la pantalla */
+  main,
+  .form-container,
+  .contacto-container {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 10px auto !important;
-    padding: 15px 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
     box-sizing: border-box !important;
   }
 
-  /* 2. Hace que tanto la tarjeta de "Escríbenos" como el formulario ocupen el 100% del ancho y no se corten */
+  /* Fuerza a que las cajas internas se adapten al ancho disponible */
   .contacto-info,
   aside,
   form {
-    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 }
-
