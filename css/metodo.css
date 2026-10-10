@@ -65,7 +65,10 @@ nav a:hover {
 
 /* Evita que el enlace de la página activa cambie de color respecto a los demás */
 nav a.active {
-    color: #a0aec0;
+    color: #ffffff;
+    font-weight: 700;
+    border-bottom: 2px solid #00c8ff;
+    padding-bottom: 4px;
 }
 
 /* Botón azul "Regístrate" */
