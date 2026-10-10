@@ -680,66 +680,92 @@ main::before {
     pointer-events: none;
 }
 
-/* --- CORRECCIÓN DE RESPONSIVIDAD PARA MÓVILES EN FORMULARIOS --- */
+/* --- CORRECCIÓN INTEGRAL PARA MÓVILES (ENCABEZADO + 2 COLUMNAS) --- */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
-} 
-/* --- FORZAR 2 COLUMNAS EN CELULAR SIN CORTE --- */
+}
+
 @media (max-width: 768px) {
-  /* 1. Solución del menú superior para que no monte texto */
+  /* 1. REORGANIZACIÓN DEL ENCABEZADO Y MENÚ */
   header > div {
     flex-direction: column !important;
     align-items: center !important;
-  }
-  nav ul {
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
+    text-align: center !important;
+    gap: 8px !important;
+    padding: 10px 5px !important;
   }
 
-  /* 2. Contenedor flexible de 2 columnas */
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px 10px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  nav ul li a {
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 2. RESTRUCTURACIÓN DE LAS DOS COLUMNAS DE CONTACTO */
   main.form-container,
+  main:has(form),
+  .form-container,
   .contacto-container,
   .grid-contacto {
     display: flex !important;
-    flex-direction: row !important; /* Mantiene dos columnas */
+    flex-direction: row !important; /* Mantiene las dos columnas */
     justify-content: space-between !important;
+    align-items: flex-start !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 10px 5px !important;
+    padding: 10px 4px !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
-    gap: 8px !important; /* Reduce la separación entre cajas */
+    gap: 6px !important;
   }
 
-  /* 3. Reduce el ancho y relleno de ambas cajas para que quepan juntas */
+  /* 3. AJUSTE DE ANCHOS PARA QUE QUEPAN HOMBRO CON HOMBRO */
   .contacto-info,
   aside {
-    width: 42% !important; /* Hace más angosta la tarjeta izquierda */
+    width: 42% !important;
     min-width: 0 !important;
-    padding: 10px !important;
+    padding: 10px 8px !important;
     box-sizing: border-box !important;
   }
 
   form,
   .form-card {
-    width: 56% !important; /* Ocupa el resto del espacio */
+    width: 56% !important;
     min-width: 0 !important;
-    padding: 10px !important;
+    padding: 10px 8px !important;
     box-sizing: border-box !important;
   }
 
-  /* 4. Hace más pequeños los textos y los campos para que no se deformen */
-  .contacto-info h3,
+  /* 4. REDUCCIÓN PROPORCIONAL DE TIPOGRAFÍAS Y CAMPOS */
+  .contacto-info h3 {
+    font-size: 13px !important;
+  }
+
   .contacto-info p,
+  .contacto-info li,
   form label,
   form input,
   form select,
-  form textarea {
-    font-size: 11px !important; /* Texto compacto para celular */
+  form textarea,
+  form button {
+    font-size: 11px !important;
   }
-  
-  .form-group-row {
-    grid-template-columns: 1fr !important; /* Campos de texto uno debajo del otro */
+
+  form input,
+  form select,
+  form textarea {
+    padding: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
