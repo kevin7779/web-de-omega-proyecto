@@ -79,6 +79,12 @@ nav a:hover {
     color: #ffffff;
 }
 
+nav a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #00c8ff;
+    padding-bottom: 4px;
+}
+
 /* Botón Iniciar Sesión */
 .btn-login {
     color: #a0aec0;
