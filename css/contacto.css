@@ -680,9 +680,14 @@ main::before {
     pointer-events: none;
 }
 
-/* --- CORRECCIÓN DE RESPONSIVIDAD PARA MÓVILES --- */
+/* --- CORRECCIÓN DE RESPONSIVIDAD PARA MÓVILES EN FORMULARIOS --- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
-  /* 1. Ordena el encabezado en una sola columna para que no se salgan los botones */
+  /* 1. Ordena el encabezado en una sola columna */
   header > div {
     flex-direction: column;
     align-items: flex-start;
@@ -693,20 +698,13 @@ main::before {
     gap: 0.75rem;
   }
 
-  /* 2. Hace que la sección hero baje la tarjeta de informe debajo del texto */
-  .hero-container {
-    padding: 1rem;
-    grid-template-columns: 1fr;
-  }
-
-  /* 3. Ajusta los títulos grandes para que quepan en pantallas angostas */
-  .hero-texto h1 {
-    font-size: 1.75rem;
-  }
-
-  /* 4. Asegura que el aside ocupe exactamente el ancho disponible */
-  aside {
-    width: 100%;
-    max-width: 100%;
+  /* 2. Ajusta el contenedor del formulario para que tenga márgenes seguros en celular */
+  main:has(form),
+  .form-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 15px auto !important;
+    padding: 20px 12px !important;
+    box-sizing: border-box !important;
   }
 }
