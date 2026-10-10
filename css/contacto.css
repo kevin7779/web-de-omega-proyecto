@@ -685,33 +685,61 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 } 
-/* --- MANTENER DOS COLUMNAS ADAPTADAS EN MÓVILES --- */
+/* --- FORZAR 2 COLUMNAS EN CELULAR SIN CORTE --- */
 @media (max-width: 768px) {
-  /* 1. Permite que el contenedor principal de la página de contacto ajuste sus espacios */
+  /* 1. Solución del menú superior para que no monte texto */
+  header > div {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  nav ul {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+
+  /* 2. Contenedor flexible de 2 columnas */
   main.form-container,
-  main:has(form),
-  .form-container,
   .contacto-container,
   .grid-contacto {
     display: flex !important;
-    flex-direction: row !important; /* Mantiene las dos columnas en fila */
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    flex-direction: row !important; /* Mantiene dos columnas */
+    justify-content: space-between !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 10px auto !important;
     padding: 10px 5px !important;
+    margin: 0 auto !important;
     box-sizing: border-box !important;
-    gap: 15px !important;
+    gap: 8px !important; /* Reduce la separación entre cajas */
   }
 
-  /* 2. Ajusta el tamaño de ambas cajas para que quepan juntas sin salirse de la pantalla */
+  /* 3. Reduce el ancho y relleno de ambas cajas para que quepan juntas */
   .contacto-info,
-  aside,
-  form {
-    flex: 1 1 280px !important; /* Se adaptan y se colocan lado a lado si hay espacio, o se acomodan limpiamente */
-    max-width: 100% !important;
+  aside {
+    width: 42% !important; /* Hace más angosta la tarjeta izquierda */
+    min-width: 0 !important;
+    padding: 10px !important;
     box-sizing: border-box !important;
-    padding: 15px !important;
+  }
+
+  form,
+  .form-card {
+    width: 56% !important; /* Ocupa el resto del espacio */
+    min-width: 0 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 4. Hace más pequeños los textos y los campos para que no se deformen */
+  .contacto-info h3,
+  .contacto-info p,
+  form label,
+  form input,
+  form select,
+  form textarea {
+    font-size: 11px !important; /* Texto compacto para celular */
+  }
+  
+  .form-group-row {
+    grid-template-columns: 1fr !important; /* Campos de texto uno debajo del otro */
   }
 }
