@@ -685,79 +685,113 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
-/* --- CORRECCIÓN DEFINITIVA DE TAMAÑO Y POSICIÓN EN MÓVILES --- */
+/* =========================================================
+   SOLUCIÓN DEFINITIVA DE DOS COLUMNAS EN PANTALLAS MÓVILES
+   ========================================================= */
+
+/* Reset global para evitar cualquier scroll horizontal */
+html, body {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @media (max-width: 768px) {
-  /* 1. Previene cualquier desborde global */
-  html, body {
+  /* 1. Reset completo del encabezado y menú */
+  header, header > div, nav {
     width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* 2. Ajusta la cabecera */
   header > div {
     flex-direction: column !important;
     align-items: center !important;
-    padding: 10px 5px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 8px !important;
   }
 
   nav ul {
+    display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 6px !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* 3. Contenedor de contacto: reduce márgenes y elimina restricciones anchas */
-  main.form-container,
+  /* 2. Forzar el contenedor principal a mantenerse alineado a la izquierda */
+  main,
+  section,
   .contacto-container,
-  .grid-contacto {
+  .form-container,
+  .grid-contacto,
+  body > div {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
+    align-items: flex-start !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 !important;
-    padding: 8px 4px !important;
+    margin: 0 auto !important;
+    padding: 10px 4px !important;
     box-sizing: border-box !important;
-    gap: 4px !important;
+    transform: none !important; /* Elimina desplazamientos laterales */
+    left: 0 !important;
   }
 
-  /* 4. Fuerza a ambas cajas a encajar en porcentajes estrictos */
+  /* 3. Columna izquierda ("Escríbenos") */
   .contacto-info,
-  aside {
-    width: 38% !important;
+  aside,
+  main > div:first-child,
+  section > div:first-child {
+    width: 40% !important;
+    max-width: 40% !important;
     min-width: 0 !important;
-    max-width: 38% !important;
-    padding: 8px !important;
+    margin: 0 !important;
+    padding: 8px 6px !important;
     box-sizing: border-box !important;
   }
 
+  /* 4. Columna derecha (Formulario) */
   form,
-  .form-card {
-    width: 60% !important;
+  .form-card,
+  main > div:last-child,
+  section > div:last-child {
+    width: 58% !important;
+    max-width: 58% !important;
     min-width: 0 !important;
-    max-width: 60% !important;
-    padding: 8px !important;
+    margin: 0 !important;
+    padding: 8px 6px !important;
     box-sizing: border-box !important;
   }
 
-  /* 5. Ajuste de textos y campos de entrada dentro del formulario */
+  /* 5. Ajuste proporcional de textos y campos de entrada */
   .contacto-info h3,
+  form label {
+    font-size: 10px !important;
+    margin-bottom: 4px !important;
+  }
+
   .contacto-info p,
   .contacto-info li,
-  form label,
   form input,
   form select,
   form textarea,
   form button {
-    font-size: 10px !important;
-    line-height: 1.2 !important;
+    font-size: 9px !important;
   }
 
   form input,
   form select,
   form textarea {
+    width: 100% !important;
+    min-width: 0 !important;
     padding: 4px !important;
     margin-bottom: 6px !important;
+    box-sizing: border-box !important;
   }
 }
