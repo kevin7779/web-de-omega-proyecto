@@ -685,27 +685,33 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 } 
-
-/* --- CORRECCIÓN FINAL PARA CONTENEDOR DE CONTACTO EN MÓVILES --- */
+/* --- MANTENER DOS COLUMNAS ADAPTADAS EN MÓVILES --- */
 @media (max-width: 768px) {
-  /* Asegura que el contenedor general de la página de contacto no desborde la pantalla */
-  main,
+  /* 1. Permite que el contenedor principal de la página de contacto ajuste sus espacios */
+  main.form-container,
+  main:has(form),
   .form-container,
-  .contacto-container {
+  .contacto-container,
+  .grid-contacto {
+    display: flex !important;
+    flex-direction: row !important; /* Mantiene las dos columnas en fila */
+    flex-wrap: wrap !important;
+    justify-content: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    margin: 10px auto !important;
+    padding: 10px 5px !important;
     box-sizing: border-box !important;
+    gap: 15px !important;
   }
 
-  /* Fuerza a que las cajas internas se adapten al ancho disponible */
+  /* 2. Ajusta el tamaño de ambas cajas para que quepan juntas sin salirse de la pantalla */
   .contacto-info,
   aside,
   form {
+    flex: 1 1 280px !important; /* Se adaptan y se colocan lado a lado si hay espacio, o se acomodan limpiamente */
     max-width: 100% !important;
     box-sizing: border-box !important;
+    padding: 15px !important;
   }
 }
