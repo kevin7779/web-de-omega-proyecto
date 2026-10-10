@@ -211,6 +211,12 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* --- CORRECCIÓN DE RESPONSIVIDAD PARA MÓVILES --- */
 @media (max-width: 768px) {
   /* 1. Ordena el encabezado en una sola columna para que no se salgan los botones */
