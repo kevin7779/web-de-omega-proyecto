@@ -238,21 +238,34 @@ footer {
     margin-top: auto;
 }
 @media (max-width: 768px) {
+    main,
+    .nosotros-container {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
     .grid-metodo,
     .grid-2x2 {
         display: grid !important;
-        grid-template-columns: 1fr !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .tarjeta-card {
         flex-direction: row;
         align-items: center;
         min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .tarjeta-info {
+        flex: 1;
         min-width: 0;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .tarjeta-media {
