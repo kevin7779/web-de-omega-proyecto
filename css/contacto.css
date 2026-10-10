@@ -687,34 +687,26 @@ html, body {
 } 
 
 @media (max-width: 768px) {
-  /* 1. Ordena el encabezado en una sola columna */
-  header > div {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  /* 2. Asegura que el contenedor principal del formulario no se corte */
-  main:has(form),
-  .form-container,
-  main {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 10px auto !important;
-    padding: 15px 10px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 3. Si usas un diseño de cuadrícula o dos columnas en contacto, fuerza que sea una sola columna */
-  .contacto-container, 
-  .grid-contacto {
+  /* 1. Asegura que el contenedor principal o grid de la página de contacto sea de una sola columna */
+  main.form-container,
+  .contacto-container,
+  .grid-contacto,
+  .form-grid {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 20px !important;
+    max-width: 100% !important;
+    margin: 10px auto !important;
+    padding: 15px 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Hace que tanto la tarjeta de "Escríbenos" como el formulario ocupen el 100% del ancho y no se corten */
+  .contacto-info,
+  aside,
+  form {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
