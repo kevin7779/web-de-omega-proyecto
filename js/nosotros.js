@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Seleccionamos las tarjetas y secciones que queremos animar
     const elementosAnimar = document.querySelectorAll(".tarjeta-card, .titulo-compromisos, .banner-texto");
 
-    // Estilos iniciales para la animación (opcional, también puedes ponerlos en tu CSS)
+    // Estilos iniciales para la animación
     elementosAnimar.forEach(el => {
         el.style.opacity = "0";
         el.style.transform = "translateY(30px)";
