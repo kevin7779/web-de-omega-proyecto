@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Mitad izquierda (Azul cian brillante) -->
+  <path d="M256 32 C180 32, 70 60, 60 140 C60 300, 180 430, 256 480 Z" fill="#00aaff"/>
+  
+  <!-- Mitad derecha (Borde azul cian y centro oscuro) -->
+  <path d="M256 32 C332 32, 442 60, 452 140 C452 300, 330 430, 256 480 Z" fill="#00aaff"/>
+  <path d="M256 80 C310 80, 395 102, 402 160 C402 280, 310 380, 256 425 Z" fill="#0a0f1d"/>
+</svg>
