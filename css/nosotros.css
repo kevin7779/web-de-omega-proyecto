@@ -456,34 +456,24 @@ footer {
     justify-content: space-between;
     box-sizing: border-box;
 }
-/* =======================================================
-   6. RESPONSIVO EN MÓVILES (AJUSTES DE HEADER Y CUADRÍCULA)
-   ======================================================= */
-@media (max-width: 768px) {
-    /* Ajustar el contenedor del encabezado para móviles */
-    .header-container {
-        flex-direction: column;
-        gap: 12px;
-        padding: 10px 15px;
-    }
 
-    /* Reducir el tamaño de la barra de navegación para que no se amontone */
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 12px;
-        padding: 0;
-        margin: 0;
-    }
+/* Reducir el tamaño de la barra de navegación en móviles */
+header nav ul {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
 
-    header nav ul li a {
-        font-size: 0.85rem;
-    }
+header nav ul li a {
+    font-size: 0.85rem !important;
+}
 
-    /* Asegurar que las tarjetas de servicios/método bajen a una sola columna */
-    .grid-servicios, .grid-metodo, .grid-2x2 {
-        grid-template-columns: 1fr !important;
-    }
+/* Asegurar que las tarjetas bajen a una sola columna */
+.grid-servicios, .grid-metodo, .grid-2x2 {
+    grid-template-columns: 1fr !important;
 }
 
 /* Estilo para el indicador activo del menú (la línea celeste) */
@@ -498,5 +488,5 @@ header nav ul li a.active::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #0ea5e9; /* Color celeste característico */
+    background-color: #0ea5e9;
 }
