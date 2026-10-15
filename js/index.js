@@ -44,4 +44,55 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   }
+
+  // 3. Animación de aparición suave (Fade-in) al cargar la página
+  const elementsToAnimate = document.querySelectorAll(".hero-texto, aside, .card");
+  elementsToAnimate.forEach((el, index) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    el.style.transitionDelay = `${index * 0.15}s`;
+
+    setTimeout(() => {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    }, 100);
+  });
+
+  // 4. EFECTOS BACANES EN BOTONES Y ENLACES (Hover fluido y Clic estilo resorte)
+  const interactiveElements = document.querySelectorAll(".btn-primary, .btn-secondary, .btn-registro, .btn-login, nav a, button");
+  
+  interactiveElements.forEach(el => {
+    // Transición suave general
+    el.style.transition = "all 0.25s ease";
+
+    // Efecto cuando el mouse pasa por encima (Hover flotante y brillo)
+    el.addEventListener("mouseenter", () => {
+      if (!el.classList.contains("btn-registro") && !el.classList.contains("btn-primary") && !el.classList.contains("btn-login")) {
+        el.style.color = "#38bdf8"; // Vuelve los textos del menú cian brillante al pasar el mouse
+      }
+      el.style.transform = "translateY(-2px)"; // Pequeño efecto de elevación hacia arriba
+    });
+
+    // Cuando el mouse sale, regresa a la normalidad
+    el.addEventListener("mouseleave", () => {
+      // Si no es la página actual, respeta el color original del menú
+      const currentLocation = window.location.pathname.split("/").pop() || "index.html";
+      if (el.getAttribute("data-page") !== currentLocation) {
+        if (el.tagName === "A" && !el.className.includes("btn")) {
+          el.style.color = "#94a3b8"; 
+        }
+      }
+      el.style.transform = "translateY(0)";
+    });
+
+    // Efecto de clic tipo resorte (contraerse al tocar)
+    el.addEventListener("mousedown", () => {
+      el.style.transform = "scale(0.96) translateY(0)";
+    });
+
+    el.addEventListener("mouseup", () => {
+      el.style.transform = "scale(1) translateY(-2px)";
+    });
+  });
 });
