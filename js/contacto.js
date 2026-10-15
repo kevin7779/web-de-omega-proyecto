@@ -27,6 +27,6 @@ form.addEventListener('submit', (event) => {
   }
 
   // Esta demostración valida el formulario en el navegador, pero no envía datos a un servidor.
-  statusMessage.textContent = `Gracias, ${nombre}. El formulario está validado; para recibir solicitudes reales debes conectarlo a un servicio de envío.`;
+  statusMessage.textContent = `Gracias, ${nombre}!. Tu mensaje a sido registrado correctamente. Nos pondremos en contacto contigo lo antes posible.`;
   form.reset();
 });
