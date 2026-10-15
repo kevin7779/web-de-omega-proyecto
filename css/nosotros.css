@@ -229,12 +229,32 @@ footer {
     justify-content: space-between;
     box-sizing: border-box;
 }
-
-/* ==========================================
-   6. RESPONSIVO EN MÓVILES
-   ========================================== */
+/* =======================================================
+   6. RESPONSIVO EN MÓVILES (AJUSTES DE HEADER Y CUADRÍCULA)
+   ======================================================= */
 @media (max-width: 768px) {
-    .grid-metodo, .grid-2x2 {
+    /* Ajustar el contenedor del encabezado para móviles */
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 15px;
+    }
+
+    /* Reducir el tamaño de la barra de navegación para que no se amontone */
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+        padding: 0;
+        margin: 0;
+    }
+
+    header nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* Asegurar que las tarjetas de servicios/método bajen a una sola columna */
+    .grid-servicios, .grid-metodo, .grid-2x2 {
         grid-template-columns: 1fr !important;
     }
 }
