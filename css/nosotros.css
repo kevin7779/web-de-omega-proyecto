@@ -458,40 +458,47 @@ footer {
 }
 
 /* =======================================================
-   REGLAS PARA MÓVILES (ENCABEZADO E IMAGEN PRINCIPAL)
+   6. RESPONSIVO EN MÓVILES (AJUSTES DE HEADER Y CUADRÍCULA)
    ======================================================= */
 @media (max-width: 768px) {
-    /* 1. Ajuste del encabezado */
+    /* Ajustar el contenedor del encabezado para móviles */
     .header-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center;
-        width: 100% !important;
-        padding: 10px 5px !important;
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 15px;
     }
 
+    /* Reducir el tamaño de la barra de navegación para que no se amontone */
     header nav ul {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 8px 10px !important;
-        padding: 0 !important;
-        margin: 10px 0 0 0 !important;
-        width: 100% !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+        padding: 0;
+        margin: 0;
     }
 
     header nav ul li a {
-        font-size: 0.8rem !important;
-        padding: 2px 4px !important;
+        font-size: 0.85rem;
     }
 
-    /* 2. Ajuste de la imagen principal para que no se vea gigante */
-    .banner-img, .hero-img, main img {
-        max-width: 100% !important;
-        height: auto !important;
-        max-height: 250px !important;
-        object-fit: cover !important;
-        border-radius: 12px !important;
+    /* Asegurar que las tarjetas de servicios/método bajen a una sola columna */
+    .grid-servicios, .grid-metodo, .grid-2x2 {
+        grid-template-columns: 1fr !important;
     }
 }
+
+/* Estilo para el indicador activo del menú (la línea celeste) */
+header nav ul li a.active {
+    position: relative;
+}
+
+header nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0ea5e9; /* Color celeste característico */
+}
+ 459---->>>
