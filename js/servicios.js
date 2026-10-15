@@ -1,21 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Animación suave de las tarjetas de servicios
-  const tarjetasServicios = document.querySelectorAll(".servicio-card");
-  tarjetasServicios.forEach((tarjeta, index) => {
-    tarjeta.style.opacity = "0";
-    tarjeta.style.transform = "translateY(25px)";
-    tarjeta.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    tarjeta.style.transitionDelay = `${index * 0.12}s`;
-
-    setTimeout(() => {
-      tarjeta.style.opacity = "1";
-      tarjeta.style.transform = "translateY(0)";
-    }, 150);
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
     // 1. Animación suave inicial de las tarjetas de servicios
     const tarjetasServicios = document.querySelectorAll(".servicio-card, .tarjeta-card");
     tarjetasServicios.forEach((tarjeta, index) => {
@@ -30,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 150);
     });
 
-    // 2. Funcionalidad del Modal de Servicios
+    // 2. Funcionalidad del Modal de Servicios (Ventana Flotante)
     const modalOverlay = document.getElementById('serviceModal');
     const closeModalBtn = document.getElementById('closeModal');
     
@@ -116,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 modalScope.textContent = data.scope;
                 modalDuration.textContent = data.duration;
                 
-                // Rellenar la lista de características
+                // Rellenar la lista de características dinámicamente
                 modalList.innerHTML = '';
                 data.features.forEach(feature => {
                     const li = document.createElement('li');
@@ -129,14 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Cerrar modal al hacer clic en el botón de cerrar
+    // Cerrar modal al hacer clic en el botón de cerrar ("X")
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', () => {
             modalOverlay.classList.remove('active');
         });
     }
 
-    // Cerrar modal al hacer clic fuera del contenido
+    // Cerrar modal al hacer clic fuera de la ventana de contenido
     if (modalOverlay) {
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
