@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nosotros - Omega Ciberseguridad</title>
+
+  <link rel="stylesheet" href="css/nosotros.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <link rel="icon" href="imgenesnosotros/logo-svg.svg" type="image/svg+xml">
+
+</head>
+
+<body>
+  
+  <!-- Encabezado / Menú -->
+  <header>
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i> OMEGA CIBERSEGURIDAD
+
+      </a>
+
+      <nav>
+
+        <ul>
+
+          <li><a href="servicios.html">Servicios</a></li>
+
+          <li><a href="metodo.html">Cómo trabajamos</a></li>
+
+          <li><a href="nosotros.html" class="active">Nosotros</a></li>
+
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Iniciar sesión</a></li>
+
+          <li><a href="registrate.html" class="btn-registrate">Regístrate</a></li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+  <!-- Contenido Principal -->
+
+  <main class="nosotros-container">
+
+
+
+    <!-- Banner Principal con fondo real de servidores -->
+
+    <section class="banner-box">
+
+      <div class="banner-texto">
+
+        <span class="tag-seccion">SECURITY / ABOUT US</span>
+
+        <h1>Protegemos tu infraestructura digital</h1>
+
+        <p>Especialistas en auditorías de ciberseguridad y pruebas de penetración enfocadas en resultados reales.</p>
+
+      </div>
+
+       
+       <div class="carousel">
+        <!-- Contenedor de las diapositivas -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imgenesnosotros/banner1.jpg" alt="banner1">
+            </div>
+            <div class="carousel-item">
+                <img src="imgenesnosotros/banner2.jpg" alt="banner2">
+            </div>
+            <div class="carousel-item">
+                <img src="imgenesnosotros/banner3.jpg" alt="banner3">
+            </div>
+            <div class="carousel-item">
+                <img src="imgenesnosotros/banner4.jpg" alt="banner4">
+            </div>
+        </div>
+        </div>
+     
+    
+
+    
+        <!-- Indicadores (puntos) -->
+        <div class="carousel-indicators">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+   
+
+    </section>
+
+<br>
+
+    <!-- Subtítulo de sección -->
+
+    <h2 class="titulo-compromisos">cómo nos comprometemos</h2>
+
+
+
+    <!-- Cuadrícula 2x2 con imágenes reales externas -->
+
+    <!-- Cuadrícula 2x2 -->
+<section class="grid-2x2">
+
+    <!-- Tarjeta 1: Autorización Escrita -->
+    <article class="tarjeta-card"  onclick="abrirModal('modal-autorizacion')">
+        <div class="tarjeta-info">
+            <h3>AUTORIZACIÓN ESCRITA</h3>
+            <p>solo probamos los sistemas que el cliente autoriza, con un alcance acordado</p>
+        </div>
+        <div class="tarjeta-media">
+            <img src="imgenesnosotros/autorizacion.jpg" alt="Autorizacion Escrita">
+        </div>
+        
+    </article>
+
+    <!-- Tarjeta 2: Informes en Lenguaje Claro -->
+    <article class="tarjeta-card" onclick="abrirModal('modal-informes')">
+        <div class="tarjeta-info">
+            <h3>INFORMES EN LENGUAJE CLARO</h3>
+            <p>cada hallazgo se explica sin tecnicismo y con pasos para corregirlo.</p>
+        </div>
+        <div class="tarjeta-media" >
+            <img src="imgenesnosotros/informe.jpg" alt="Informes">
+        </div>
+    </article>
+
+    <!-- Tarjeta 3: Confidencialidad -->
+    <article class="tarjeta-card" onclick="abrirModal('modal-confidencialidad')">
+        <div class="tarjeta-info">
+            <h3>CONFIDENCIALIDAD</h3>
+            <p>la información de tu empresa se queda en tu empresa</p>
+        </div>
+        <div class="tarjeta-media">
+            <img src="imgenesnosotros/confidencialidad.jpg" alt="Confidencialidad">
+        </div>
+    </article>
+
+    <!-- Tarjeta 4: Enfoque Práctico -->
+    <article class="tarjeta-card" onclick="abrirModal('modal-enfoque')">
+        <div class="tarjeta-info">
+            <h3>ENFOQUE PRÁCTICO</h3>
+            <p>te decimos que arreglar primero segun el riesgo real.</p>
+        </div>
+        <div class="tarjeta-media">
+            <img src="imgenesnosotros/enfoque.jpg" alt="Enfoque Práctico">
+        </div>
+    </article>
+
+</section>
+
+<!-- VENTANAS EMERGENTES (MODALES) -->
+
+<dialog id="modal-autorizacion" class="modal-info">
+    <h3>Alcance y Marco Legal</h3>
+    <ul>
+        <li><strong>Documento formal:</strong> Firma de un acuerdo de nivel de servicio (SLA) o contrato.</li>
+        <li><strong>Límites definidos:</strong> Declaración explícita de IP, dominios y entornos habilitados.</li>
+        <li><strong>Cero interrupciones:</strong> Reglas para garantizar la disponibilidad del servicio.</li>
+    </ul>
+    <button onclick="cerrarModal('modal-autorizacion')">Cerrar</button>
+</dialog>
+
+<dialog id="modal-informes" class="modal-info">
+    <h3>Estructura del Reporte</h3>
+    <ul>
+        <li><strong>Resumen ejecutivo:</strong> Visión general para gerencia sin tecnicismos.</li>
+        <li><strong>Evidencia técnica:</strong> Capturas, PoC y pasos para reproducir cada fallo.</li>
+        <li><strong>Guía de remediación:</strong> Recomendaciones puntuales para desarrolladores.</li>
+    </ul>
+    <button onclick="cerrarModal('modal-informes')">Cerrar</button>
+</dialog>
+
+<dialog id="modal-confidencialidad" class="modal-info">
+    <h3>Protección de Datos</h3>
+    <ul>
+        <li><strong>Acuerdo NDA:</strong> Firma de confidencialidad antes de acceder a datos sensibles.</li>
+        <li><strong>Manejo seguro:</strong> Almacenamiento y transmisión cifrada de extremo a extremo.</li>
+        <li><strong>Destrucción de datos:</strong> Eliminación definitiva de registros al finalizar.</li>
+    </ul>
+    <button onclick="cerrarModal('modal-confidencialidad')">Cerrar</button>
+</dialog>
+
+<dialog id="modal-enfoque" class="modal-info">
+    <h3>Priorización de Riesgos</h3>
+    <ul>
+        <li><strong>Clasificación CVSS:</strong> Evaluación según impacto real (Crítico, Alto, Medio, Bajo).</li>
+        <li><strong>Matriz de riesgo:</strong> Diferenciación entre fallos teóricos y amenazas reales.</li>
+        <li><strong>Re-evaluación gratis:</strong> Verificación sin costo de las correcciones hechas.</li>
+    </ul>
+    <button onclick="cerrarModal('modal-enfoque')">Cerrar</button>
+</dialog>
+
+
+  </main>
+
+
+
+  <!-- Pie de página -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <span>© 2026 Omega Ciberseguridad</span>
+
+      <span>Pruebas siempre con autorización por escrito del cliente.</span>
+
+    </div>
+
+  </footer>
+
+ <script src="js/nosotros.js"></script>
+
+</body>
+
+</html>
