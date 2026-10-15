@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Omega Ciberseguridad</title>
-    
-    <!-- Icono de la pestaña del navegador apuntando a tu carpeta -->
+
+    <!-- Icono de la pestaña del navegador -->
     <link rel="icon" type="image/svg+xml" href="imágenesnosotros/logo-svg.svg">
 
-    <!-- Hojas de estilo CSS -->
+    <!-- Font Awesome (para el escudo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Hojas de estilo CSS (header.css al final para que gane) -->
     <link rel="stylesheet" href="css/nosotros.css">
     <link rel="stylesheet" href="css/servicios.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
 
     <!-- Encabezado / Menú Navegación -->
     <header>
         <div class="header-container">
-          <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <i class="fa-solid fa-shield-halved"></i> OMEGA CIBERSEGURIDAD
             </a>
             <nav>
@@ -42,7 +46,6 @@
             <p>Cinco servicios para que sepas dónde estás expuesto y qué arreglar primero.</p>
         </section>
 
-        <!-- Cuadrícula de Servicios con tus imágenes locales -->
         <section class="grid-servicios">
 
             <!-- 1. Pruebas de penetración -->
@@ -77,40 +80,41 @@
                     <p>Configuramos la protección contra suplantación y revisamos permisos en tus cuentas y servicios en la nube.</p>
                 </div>
             </article>
-<!-- 4. Capacitación al personal -->
-        <article class="servicio-card">
-            <div class="servicio-media">
-                <img src="img2/capacitacion.jpg" alt="Capacitación al personal" onerror="this.src='img2/capacitacion.png'">
-            </div>
-            <div class="servicio-info">
-                <h3>Capacitación al personal</h3>
-                <p>Talleres y simulacros de phishing para que tu equipo reconozca un engaño antes de hacer clic.</p>
-            </div>
-        </article>
 
-        <!-- 5. Respuesta a incidentes -->
-        <article class="servicio-card servicio-destacado">
-            <div class="servicio-media">
-                <img src="img2/respuestas.jpg" alt="Respuesta a incidentes" onerror="this.src='img2/respuestas.png'">
-            </div>
-            <div class="servicio-info">
-                <h3>Respuesta a incidentes</h3>
-                <p>Si ya te atacaron, contenemos el problema, recuperamos los sistemas y explicamos qué pasó.</p>
-            </div>
-        </article>
+            <!-- 4. Capacitación al personal -->
+            <article class="servicio-card">
+                <div class="servicio-media">
+                    <img src="img2/capacitacion.jpg" alt="Capacitación al personal" onerror="this.src='img2/capacitacion.png'">
+                </div>
+                <div class="servicio-info">
+                    <h3>Capacitación al personal</h3>
+                    <p>Talleres y simulacros de phishing para que tu equipo reconozca un engaño antes de hacer clic.</p>
+                </div>
+            </article>
 
-    </section>
+            <!-- 5. Respuesta a incidentes -->
+            <article class="servicio-card servicio-destacado">
+                <div class="servicio-media">
+                    <img src="img2/respuestas.jpg" alt="Respuesta a incidentes" onerror="this.src='img2/respuestas.png'">
+                </div>
+                <div class="servicio-info">
+                    <h3>Respuesta a incidentes</h3>
+                    <p>Si ya te atacaron, contenemos el problema, recuperamos los sistemas y explicamos qué pasó.</p>
+                </div>
+            </article>
 
-</main>
+        </section>
 
-<!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <span>© 2026 Omega Ciberseguridad</span>
-        <span>Pruebas siempre con autorización por escrito del cliente.</span>
-    </div>
-</footer>
-    
-<script src="js/servicios.js"></script>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span>© 2026 Omega Ciberseguridad</span>
+            <span>Pruebas siempre con autorización por escrito del cliente.</span>
+        </div>
+    </footer>
+
+    <script src="js/servicios.js"></script>
 </body>
 </html>
