@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // 1. Inyectar el Header específico para la página de servicios
   const headerElement = document.querySelector("header");
   if (headerElement) {
     headerElement.innerHTML = `
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
         <nav aria-label="Principal">
           <ul>
-            <li><a href="servicios.html" data-page="servicios.html">Servicios</a></li>
+            <li><a href="servicios.html" data-page="servicios.html" style="color: #38bdf8; font-weight: 600;">Servicios</a></li>
             <li><a href="metodo.html" data-page="metodo.html">Cómo trabajamos</a></li>
             <li><a href="nosotros.html" data-page="nosotros.html">Nosotros</a></li>
             <li><a href="contacto.html" data-page="contacto.html">Contacto</a></li>
@@ -21,18 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </nav>
       </div>
     `;
-
-    // Resaltar automáticamente la página actual en el menú
-    const currentLocation = window.location.pathname.split("/").pop() || "index.html";
-    const navLinks = headerElement.querySelectorAll("nav a[data-page]");
-    navLinks.forEach(link => {
-      if (link.getAttribute("data-page") === currentLocation) {
-        link.style.color = "#38bdf8";
-        link.style.fontWeight = "600";
-      }
-    });
   }
 
+  // 2. Inyectar el Footer
   const footerElement = document.querySelector("footer");
   if (footerElement) {
     footerElement.innerHTML = `
@@ -42,4 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   }
+
+  // 3. Animación de aparición suave para las tarjetas de servicios
+  const tarjetasServicios = document.querySelectorAll(".servicio-card");
+  tarjetasServicios.forEach((tarjeta, index) => {
+    tarjeta.style.opacity = "0";
+    tarjeta.style.transform = "translateY(25px)";
+    tarjeta.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    tarjeta.style.transitionDelay = `${index * 0.12}s`;
+
+    setTimeout(() => {
+      tarjeta.style.opacity = "1";
+      tarjeta.style.transform = "translateY(0)";
+    }, 150);
+  });
 });
