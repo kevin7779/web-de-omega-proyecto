@@ -457,36 +457,41 @@ footer {
     box-sizing: border-box;
 }
 
-/* Reducir el tamaño de la barra de navegación en móviles */
-header nav ul {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 8px 12px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-}
+/* =======================================================
+   REGLAS PARA MÓVILES (ENCABEZADO E IMAGEN PRINCIPAL)
+   ======================================================= */
+@media (max-width: 768px) {
+    /* 1. Ajuste del encabezado */
+    .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        width: 100% !important;
+        padding: 10px 5px !important;
+    }
 
-header nav ul li a {
-    font-size: 0.85rem !important;
-}
+    header nav ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px 10px !important;
+        padding: 0 !important;
+        margin: 10px 0 0 0 !important;
+        width: 100% !important;
+    }
 
-/* Asegurar que las tarjetas bajen a una sola columna */
-.grid-servicios, .grid-metodo, .grid-2x2 {
-    grid-template-columns: 1fr !important;
-}
+    header nav ul li a {
+        font-size: 0.8rem !important;
+        padding: 2px 4px !important;
+    }
 
-/* Estilo para el indicador activo del menú (la línea celeste) */
-header nav ul li a.active {
-    position: relative;
-}
-
-header nav ul li a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #0ea5e9;
+    /* 2. Ajuste de la imagen principal para que no se vea gigante */
+    .banner-img, .hero-img, main img {
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
+    }
 }
