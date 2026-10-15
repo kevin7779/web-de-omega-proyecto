@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Animación o lógica limpia para la página de método
-  const cards = document.querySelectorAll(".servicio-card, .metodo-card");
+  // Selecciona cualquier tarjeta dentro de la página de método de forma segura
+  const cards = document.querySelectorAll(".servicio-card, .metodo-card, article, .card");
+  
   cards.forEach((card, index) => {
     card.style.opacity = "0";
     card.style.transform = "translateY(20px)";
