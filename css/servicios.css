@@ -150,6 +150,8 @@ header nav ul li a.active::after {
     height: 2px;
     background-color: #0ea5e9;
 }
+
+
  /* Estilos para las tarjetas interactivas */
     .tarjeta-card {
         cursor: pointer;
