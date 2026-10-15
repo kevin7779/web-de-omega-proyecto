@@ -307,3 +307,126 @@ footer {
         grid-auto-flow: row;
     }
 }
+
+
+
+  /* Estilos generales para las tarjetas interactivas */
+        .tarjeta-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .tarjeta-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 123, 255, 0.25);
+            border-color: #00bcd4;
+        }
+
+        /* Estilos del Modal (Ventana Flotante Estética) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 15, 30, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            background: linear-gradient(145deg, #ffffff, #f4f7f9);
+            padding: 35px;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            border-top: 5px solid #0056b3;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #4a5568;
+            background: #e2e8f0;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .modal-close:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+        .modal-header-icon {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        .modal-content h3 {
+            color: #1a202c;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .modal-subtitle {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .modal-grid-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .modal-info-item h5 {
+            color: #2d3748;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .modal-info-item p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .modal-list-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        .modal-content ul {
+            padding-left: 20px;
+            color: #4a5568;
+        }
+        .modal-content li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
