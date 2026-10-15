@@ -6,7 +6,7 @@
     <title>Cómo trabajamos - Omega Ciberseguridad</title>
     <link rel="stylesheet" href="css/metodo.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
+    
 </head>
 <body>
 
@@ -19,7 +19,7 @@
             <nav>
                 <ul>
                     <li><a href="servicios.html">Servicios</a></li>
-                   <li><a href="metodo.html" class="active">Cómo trabajamos</a></li>
+                    <li><a href="metodo.html" class="active">Cómo trabajamos</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                     <li><a href="login.html" class="btn-login">Iniciar sesión</a></li>
@@ -35,58 +35,173 @@
         <!-- Cabecera -->
         <section class="seccion-header">
             <h1>Cómo trabajamos</h1>
-            <p class="subtitulo-texto">Un proceso corto y sin sorpresas. Sabes qué haremos antes de empezar.</p>
+            <p class="subtitulo-texto">Un proceso corto y sin sorpresas. Haz clic en cada etapa para ver el detalle técnico.</p>
         </section>
 
-        <!-- GRID EN 2 COLUMNAS SIN NÚMEROS -->
-                <!-- Pasos -->
+        <!-- GRID EN 2 COLUMNAS INTERACTIVO -->
         <div class="pasos-grid">
 
-            <article class="tarjeta-card">
+            <!-- Paso 1 -->
+            <article class="tarjeta-card" onclick="abrirModal('modal-alcance')">
                 <div class="tarjeta-media">
                     <img src="img3/definimos.jpg" alt="Definimos el alcance">
                 </div>
                 <div class="tarjeta-info">
-                    <h3>Definimos el alcance</h3>
+                    <h3>Definimos el alcance <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; float: right; color: #0056b3;"></i></h3>
                     <p>Acordamos qué sistemas se revisan y qué queda fuera.</p>
                 </div>
             </article>
 
-            <article class="tarjeta-card">
+            <!-- Paso 2 -->
+            <article class="tarjeta-card" onclick="abrirModal('modal-pruebas')">
                 <div class="tarjeta-media">
                     <img src="img3/pruebas.jpg" alt="Hacemos las pruebas">
                 </div>
                 <div class="tarjeta-info">
-                    <h3>Hacemos las pruebas</h3>
+                    <h3>Hacemos las pruebas <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; float: right; color: #0056b3;"></i></h3>
                     <p>Buscamos fallas con herramientas y revisión manual.</p>
                 </div>
             </article>
 
-            <article class="tarjeta-card">
+            <!-- Paso 3 -->
+            <article class="tarjeta-card" onclick="abrirModal('modal-informe')">
                 <div class="tarjeta-media">
                     <img src="img3/informe.jpg" alt="Entregamos el informe">
                 </div>
                 <div class="tarjeta-info">
-                    <h3>Entregamos el informe</h3>
+                    <h3>Entregamos el informe <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; float: right; color: #0056b3;"></i></h3>
                     <p>Cada hallazgo con su gravedad y su solución.</p>
                 </div>
             </article>
 
-            <article class="tarjeta-card">
+            <!-- Paso 4 -->
+            <article class="tarjeta-card" onclick="abrirModal('modal-acompanamos')">
                 <div class="tarjeta-media">
                     <img src="img3/acompañamos.jpg" alt="Acompañamos la corrección">
                 </div>
                 <div class="tarjeta-info">
-                    <h3>Acompañamos la corrección</h3>
+                    <h3>Acompañamos la corrección <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; float: right; color: #0056b3;"></i></h3>
                     <p>Verificamos que lo arreglado quede bien cerrado.</p>
                 </div>
             </article>
 
         </div>
 
-        </div>
-
     </main>
+
+    <!-- VENTANAS FLOTANTES (MODALES) ESTILIZADAS -->
+
+    <!-- Modal 1: Definimos el alcance -->
+    <div id="modal-alcance" class="modal-overlay">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModal('modal-alcance')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-icon"><i class="fa-solid fa-sliders"></i></div>
+            <h3>Fase 1: Definición de Alcance y Planificación</h3>
+            <p class="modal-subtitle">Establecemos las Reglas de Compromiso (RoE) para asegurar que la evaluación se realice sin interrumpir la continuidad operativa de tu empresa.</p>
+            
+            <div class="modal-grid-info">
+                <div class="modal-info-item">
+                    <h5>Documento Clave</h5>
+                    <p>Acuerdo de Reglas de Compromiso</p>
+                </div>
+                <div class="modal-info-item">
+                    <h5>Garantía</h5>
+                    <p>Cero interrupciones de servicio</p>
+                </div>
+            </div>
+
+            <div class="modal-list-title">Actividades principales de esta fase:</div>
+            <ul>
+                <li>Identificación y lista exacta de direcciones IP, dominios y aplicaciones autorizadas.</li>
+                <li>Definición de ventanas de tiempo autorizadas para las pruebas intrusivas.</li>
+                <li>Firma bilateral del acuerdo de confidencialidad (NDA) y autorización formal.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 2: Hacemos las pruebas -->
+    <div id="modal-pruebas" class="modal-overlay">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModal('modal-pruebas')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-icon"><i class="fa-solid fa-bug"></i></div>
+            <h3>Fase 2: Ejecución de Pruebas y Explotación</h3>
+            <p class="modal-subtitle">Combinamos escaneos automatizados de vulnerabilidades con técnicas avanzadas de revisión manual para encontrar brechas complejas que las herramientas automáticas ignoran.</p>
+            
+            <div class="modal-grid-info">
+                <div class="modal-info-item">
+                    <h5>Técnicas</h5>
+                    <p>Escaneo automatizado + Análisis manual</p>
+                </div>
+                <div class="modal-info-item">
+                    <h5>Enfoque</h5>
+                    <p>Vulnerabilidades críticas y lógica de negocio</p>
+                </div>
+            </div>
+
+            <div class="modal-list-title">Actividades principales de esta fase:</div>
+            <ul>
+                <li>Mapeo de la superficie de ataque y detección de puertos o servicios expuestos.</li>
+                <li>Identificación de fallas de seguridad, mala configuración o parches faltantes.</li>
+                <li>Demostración de impacto mediante pruebas de concepto (PoC) seguras y controladas.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 3: Entregamos el informe -->
+    <div id="modal-informe" class="modal-overlay">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModal('modal-informe')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-icon"><i class="fa-solid fa-file-shield"></i></div>
+            <h3>Fase 3: Elaboración y Entrega de Informes</h3>
+            <p class="modal-subtitle">Consolidamos los hallazgos en un documento estructurado que prioriza el riesgo según la severidad real y ofrece recomendaciones directas para su mitigación.</p>
+            
+            <div class="modal-grid-info">
+                <div class="modal-info-item">
+                    <h5>Nivel de Detalle</h5>
+                    <p>Reporte Ejecutivo + Técnico</p>
+                </div>
+                <div class="modal-info-item">
+                    <h5>Estándar</h5>
+                    <p>Métrica CVSS v3.1 / v4.0</p>
+                </div>
+            </div>
+
+            <div class="modal-list-title">Actividades principales de esta fase:</div>
+            <ul>
+                <li>Presentación ejecutiva a gerencia con indicadores clave de riesgo.</li>
+                <li>Reporte técnico detallado para el equipo de desarrollo/sistemas con código de guía.</li>
+                <li>Matriz priorizada de parches: Qué corregir inmediatamente y qué diferir.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 4: Acompañamos la corrección -->
+    <div id="modal-acompanamos" class="modal-overlay">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModal('modal-acompanamos')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Fase 4: Acompañamiento y Re-Test (Cierre)</h3>
+            <p class="modal-subtitle">No te dejamos solo con el informe. Brindamos soporte técnico a tu equipo durante la remediación y revaluamos los sistemas para certificar que el problema fue resuelto.</p>
+            
+            <div class="modal-grid-info">
+                <div class="modal-info-item">
+                    <h5>Soporte</h5>
+                    <p>Asesoría directa durante la corrección</p>
+                </div>
+                <div class="modal-info-item">
+                    <h5>Validación</h5>
+                    <p>Re-test de seguridad incluido</p>
+                </div>
+            </div>
+
+            <div class="modal-list-title">Actividades principales de esta fase:</div>
+            <ul>
+                <li>Sesión de dudas técnicas con el equipo encargado de implementar las soluciones.</li>
+                <li>Pruebas de re-evaluación para certificar la efectividad de los parches aplicados.</li>
+                <li>Emisión de la constancia de remediación exitosa para cumplimiento o auditorías.</li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Pie de página -->
     <footer>
@@ -95,6 +210,11 @@
             <span>Pruebas siempre con autorización por escrito del cliente.</span>
         </div>
     </footer>
-<script src="js/metodo.js"></script>
+
+    <!-- Script para controlar las ventanas modales -->
+    <script src= "">
+      
+    </script>
+
 </body>
 </html>
