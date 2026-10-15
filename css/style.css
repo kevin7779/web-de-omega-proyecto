@@ -570,6 +570,73 @@ footer span {
   /* 4. Asegura que el aside ocupe exactamente el ancho disponible */
   aside {
     width: 100%;
+
+    /* --- Sección Consultoría (Compacta / Pequeña) --- */
+.consultoria-section {
+  padding: 50px 20px;
+  background-color: #070e1b;
+  display: flex;
+  justify-content: center;
+}
+
+.consultoria-container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.consultoria-container h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.consultoria-subtitulo {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.consultoria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.consultoria-card {
+  background-color: #0c162d;
+  border: 1px solid #1e2d4a;
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.consultoria-card:hover {
+  transform: translateY(-3px);
+  border-color: #00aaff;
+}
+
+.card-icon {
+  font-size: 20px;
+  color: #00aaff;
+  margin-bottom: 12px;
+}
+
+.consultoria-card p {
+  color: #cbd5e0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .consultoria-grid {
+    grid-template-columns: 1fr;
+  }
+}
     max-width: 100%;
   }
 }
