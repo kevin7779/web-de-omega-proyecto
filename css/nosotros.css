@@ -1,0 +1,426 @@
+/* ==========================================
+   1. ESTRUCTURA BASE Y CONTROL DE ALTURA
+   ========================================== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #060d14 !important;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: left;
+    align-items: stretch;
+    max-width: 100%;
+    margin-top: 70px;
+    
+}
+
+/* Contenedor principal */
+.carousel {
+    position: relative;
+    width: 1050px;
+    max-width: 140%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor interno de los elementos */
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cada elemento/imagen */
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+/* Puntos indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 235px;
+    left: 50%;
+    transform: translateX(-20%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+/* Contenedor principal que se estira para eliminar el espacio inferior */
+main.nosotros-container {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
+header {
+    background-color: #060d14;
+    border-bottom: 1px solid #1a2e40;
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top:solid #060d14;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1800px;
+    margin-left: 50px;
+    padding: 2px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: #00c8ff;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Botón Iniciar Sesión */
+.btn-login {
+    color: #a0aec0;
+    font-weight: 500;
+}
+
+/* Botón Regístrate */
+.btn-registrate {
+    background-color: #0099ff;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-registrate:hover {
+    background-color: #0080ff;
+}
+
+/* ==========================================
+   3. CABECERA DE PÁGINA
+   ========================================== */
+.seccion-header {
+    margin-bottom: 30px;
+}
+
+.seccion-header h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.subtitulo-texto {
+    color: #a0aec0;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* ==========================================
+   4. GRILLA Y TARJETAS EN 2 COLUMNAS
+   ========================================== */
+.img-banner {
+  
+  height: 250px; /* Ajusta la altura que prefieras */
+  object-fit: cover;
+  background-color: #dcdcdc; /* Color gris en caso de que no cargue la imagen */
+  display: block;
+  max-width:100%;
+  width: 100%;
+    
+}
+
+
+.grid-metodo, .grid-2x2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Estilos para el efecto Spotlight en las tarjetas --- */
+.tarjeta-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-card:hover {
+    transform: translateY(-4px);
+    border-color: #00aaff;
+}
+
+.tarjeta-card {
+    background-color: #0b1724;
+    border: 1px solid #1a2e40;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 0;
+    box-sizing: border-box;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.tarjeta-card:hover {
+    border-color: #00c8ff;
+    transform: translateY(-2px);
+}
+
+.tarjeta-info {
+    flex: 1;
+}
+
+.tarjeta-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.tarjeta-info p {
+    margin: 0;
+    color: #a0aec0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.tarjeta-media {
+    width: 85px;
+    height: 75px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #060d14;
+    border: 1px solid #1a2e40;
+}
+
+.tarjeta-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Estilo base para las tarjetas para que parezca que se pueden presionar */
+.tarjeta {
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    border-color:#0099ff; 
+}
+
+/* Estilo de la ventana emergente (modal nativo) */
+.modal-info {
+    background-color: #111a2e; 
+    color: #ffffff;
+    border: 1px solid #2a3b5c;
+    border-radius: 10px;
+    padding: 25px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Fondo oscuro translúcido detrás del modal */
+.modal-info::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-info h3 {
+    margin-top: 0;
+    color: #00ffcc;
+}
+
+.modal-info ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.modal-info li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+/* Botón de cerrar dentro del modal */
+.modal-info button {
+    background-color: #00ffcc;
+    color: #0b111e;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    transition: background 0.2s;
+}
+
+.modal-info button:hover {
+    background-color: #3694ff;
+}
+
+/* ==========================================
+   5. PIE DE PÁGINA (AJUSTADO AL FONDO)
+   ========================================== */
+footer {
+    border-top: 1px solid #1a2e40;
+    margin-top: auto; /* Empuja el footer al final de la pantalla */
+    padding: 20px 0;
+    color: #718096;
+    font-size: 13px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+/* =======================================================
+   6. RESPONSIVO EN MÓVILES (AJUSTES DE HEADER Y CUADRÍCULA)
+   ======================================================= */
+@media (max-width: 768px) {
+    /* Ajustar el contenedor del encabezado para móviles */
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 15px;
+    }
+
+    /* Reducir el tamaño de la barra de navegación para que no se amontone */
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+        padding: 0;
+        margin: 0;
+    }
+
+    header nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* Asegurar que las tarjetas de servicios/método bajen a una sola columna */
+    .grid-servicios, .grid-metodo, .grid-2x2 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Estilo para el indicador activo del menú (la línea celeste) */
+header nav ul li a.active {
+    position: relative;
+}
+
+header nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0ea5e9; /* Color celeste característico */
+}
