@@ -118,53 +118,54 @@
     <!-- Cuadrícula 2x2 con imágenes reales externas -->
 
     <!-- Cuadrícula 2x2 -->
-<section class="grid-2x2">
+<section class="compromisos-section">
+    <h2>cómo nos comprometemos</h2>
+    
+    <div class="grid-compromisos">
+        <!-- Tarjeta 1 -->
+        <div class="compromiso-card">
+            <div class="compromiso-info">
+                <h3>AUTORIZACIÓN ESCRITA</h3>
+                <p>Solo probamos los sistemas que el cliente autoriza, con un alcance acordado.</p>
+            </div>
+            <div class="compromiso-media">
+                <img src="imgenesnosotros/autorizacion.jpg" alt="Autorización escrita" onerror="this.src='img2/pruebas.png'">
+            </div>
+        </div>
 
-    <!-- Tarjeta 1: Autorización Escrita -->
-    <article class="tarjeta-card"  onclick="abrirModal('modal-autorizacion')">
-        <div class="tarjeta-info">
-            <h3>AUTORIZACIÓN ESCRITA</h3>
-            <p>solo probamos los sistemas que el cliente autoriza, con un alcance acordado</p>
+        <!-- Tarjeta 2 -->
+        <div class="compromiso-card">
+            <div class="compromiso-info">
+                <h3>INFORMES EN LENGUAJE CLARO</h3>
+                <p>Cada hallazgo se explica sin tecnicismos y con pasos para corregirlo.</p>
+            </div>
+            <div class="compromiso-media">
+                <img src="imgenesnosotros/informes.jpg" alt="Informes en lenguaje claro" onerror="this.src='img2/auditorias.png'">
+            </div>
         </div>
-        <div class="tarjeta-media">
-            <img src="imgenesnosotros/autorizacion.jpg" alt="Autorizacion Escrita">
-        </div>
-        
-    </article>
 
-    <!-- Tarjeta 2: Informes en Lenguaje Claro -->
-    <article class="tarjeta-card" onclick="abrirModal('modal-informes')">
-        <div class="tarjeta-info">
-            <h3>INFORMES EN LENGUAJE CLARO</h3>
-            <p>cada hallazgo se explica sin tecnicismo y con pasos para corregirlo.</p>
+        <!-- Tarjeta 3 -->
+        <div class="compromiso-card">
+            <div class="compromiso-info">
+                <h3>CONFIDENCIALIDAD</h3>
+                <p>La información de tu empresa se queda en tu empresa.</p>
+            </div>
+            <div class="compromiso-media">
+                <img src="imgenesnosotros/confidencialidad.jpg" alt="Confidencialidad" onerror="this.src='img2/seguridad.png'">
+            </div>
         </div>
-        <div class="tarjeta-media" >
-            <img src="imgenesnosotros/informe.jpg" alt="Informes">
-        </div>
-    </article>
 
-    <!-- Tarjeta 3: Confidencialidad -->
-    <article class="tarjeta-card" onclick="abrirModal('modal-confidencialidad')">
-        <div class="tarjeta-info">
-            <h3>CONFIDENCIALIDAD</h3>
-            <p>la información de tu empresa se queda en tu empresa</p>
+        <!-- Tarjeta 4 -->
+        <div class="compromiso-card">
+            <div class="compromiso-info">
+                <h3>ENFOQUE PRÁCTICO</h3>
+                <p>Te decimos qué arreglar primero según el riesgo real.</p>
+            </div>
+            <div class="compromiso-media">
+                <img src="imgenesnosotros/enfoque.jpg" alt="Enfoque práctico" onerror="this.src='img2/capacitacion.png'">
+            </div>
         </div>
-        <div class="tarjeta-media">
-            <img src="imgenesnosotros/confidencialidad.jpg" alt="Confidencialidad">
-        </div>
-    </article>
-
-    <!-- Tarjeta 4: Enfoque Práctico -->
-    <article class="tarjeta-card" onclick="abrirModal('modal-enfoque')">
-        <div class="tarjeta-info">
-            <h3>ENFOQUE PRÁCTICO</h3>
-            <p>te decimos que arreglar primero segun el riesgo real.</p>
-        </div>
-        <div class="tarjeta-media">
-            <img src="imgenesnosotros/enfoque.jpg" alt="Enfoque Práctico">
-        </div>
-    </article>
-
+    </div>
 </section>
 
 <!-- VENTANAS EMERGENTES (MODALES) -->
