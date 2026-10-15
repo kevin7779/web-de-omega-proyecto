@@ -514,21 +514,27 @@ main, .nosotros-container {
     margin-bottom: 20px !important;
 }
 
-/* --- Corrección limpia para la sección y tarjetas de Nosotros --- */
-.compromisos-section, .grid-compromisos, h2:has(+ .grid-compromisos) {
-    margin-top: 15px !important;
-    padding-top: 10px !important;
+/* --- Corrección definitiva para las tarjetas de Nosotros --- */
+.compromisos-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.grid-compromisos, .compromisos-grid {
+.compromisos-section h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-transform: lowercase;
+}
+
+.grid-compromisos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin-top: 25px;
 }
 
-/* Estructura interna de cada tarjeta */
-.compromiso-card, .servicio-card, article {
+.compromiso-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -537,39 +543,42 @@ main, .nosotros-container {
     border-radius: 10px;
     padding: 24px;
     box-sizing: border-box;
+    position: relative;
+    min-height: 130px;
 }
 
-/* Contenedor del texto */
-.compromiso-info, .servicio-info {
+.compromiso-info {
     flex: 1;
     padding-right: 15px;
     text-align: left;
 }
 
-.compromiso-info h3, .servicio-info h3 {
+.compromiso-info h3 {
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
-.compromiso-info p, .servicio-info p {
+.compromiso-info p {
     color: #94a3b8;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     line-height: 1.5;
     margin: 0;
 }
 
-/* Contenedor fijo para la imagen miniatura a la derecha */
-.compromiso-media, .servicio-media {
-    width: 80px;
-    height: 60px;
+.compromiso-media {
+    width: 85px;
+    height: 65px;
     flex-shrink: 0;
     border-radius: 6px;
     overflow: hidden;
     background-color: #0f172a;
+    border: 1px solid #1e293b;
 }
 
-.compromiso-media img, .servicio-media img {
+.compromiso-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -577,7 +586,7 @@ main, .nosotros-container {
 
 /* Responsivo para móviles */
 @media (max-width: 768px) {
-    .grid-compromisos, .compromisos-grid {
+    .grid-compromisos {
         grid-template-columns: 1fr;
     }
 }
