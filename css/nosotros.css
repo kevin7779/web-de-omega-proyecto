@@ -114,19 +114,18 @@ main.nosotros-container {
 header {
     background-color: #060d14;
     border-bottom: 1px solid #1a2e40;
-    padding: 15px 0;
+    padding: 12px 0;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    border-top:solid #060d14;
     z-index: 1000;
 }
 
 .header-container {
-    max-width: 1800px;
-    margin-left: 50px;
-    padding: 2px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,11 +140,8 @@ header {
     font-size: 18px;
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.logo i {
-    color: #00c8ff;
+    gap: 12px;
+    letter-spacing: 0.5px;
 }
 
 nav ul {
@@ -154,40 +150,37 @@ nav ul {
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 nav a {
     color: #a0aec0;
     text-decoration: none;
     font-size: 14px;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
     color: #ffffff;
 }
 
-/* Botón Iniciar Sesión */
-.btn-login {
-    color: #a0aec0;
-    font-weight: 500;
-}
-
-/* Botón Regístrate */
+/* Estilo exacto para el botón de Regístrate de la referencia */
 .btn-registrate {
-    background-color: #0099ff;
+    background: linear-gradient(135deg, #0099ff 0%, #00c8ff 100%);
     color: #ffffff !important;
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 10px 22px;
+    border-radius: 8px;
     font-weight: 600;
-    transition: background-color 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 153, 255, 0.3);
+    transition: all 0.2s ease;
 }
 
 .btn-registrate:hover {
-    background-color: #0080ff;
+    opacity: 0.92;
+    transform: translateY(-1px);
 }
-
 /* ==========================================
    3. CABECERA DE PÁGINA
    ========================================== */
