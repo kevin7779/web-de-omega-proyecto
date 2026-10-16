@@ -123,16 +123,15 @@ header {
 }
 
 .header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 40px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
 }
-
 .logo {
     color: #ffffff;
     font-weight: 700;
