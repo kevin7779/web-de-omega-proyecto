@@ -6,7 +6,81 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Espaciado general y corrección de posición para el header fijo/relativo */
+/* ==========================================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
+header {
+    background-color: #060d14;
+    border-bottom: 1px solid #1a2e40;
+    padding: 12px 0;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.header-container {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 30px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+.logo {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #ffffff;
+}
+
+.btn-registrate {
+    background: linear-gradient(135deg, #0099ff 0%, #00c8ff 100%);
+    color: #ffffff !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 153, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-registrate:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+/* Espaciado general y corrección de posición para el contenido */
 main, .servicios-container {
     max-width: 1100px;
     margin: 40px auto;
