@@ -116,7 +116,7 @@ header {
     border-bottom: 1px solid #1a2e40;
     padding: 12px 0;
     width: 100%;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1000;
