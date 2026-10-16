@@ -282,20 +282,25 @@ nav a:hover {
 }
 
 .tarjeta-media {
-    width: 85px;
-    height: 75px;
+    width: 160px !important;
+    height: 110px !important;
+    min-width: 160px !important;
+    min-height: 110px !important;
+    max-width: 160px !important;
+    max-height: 110px !important;
     border-radius: 8px;
-    overflow: hidden;
-    flex-shrink: 0;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
     background-color: #060d14;
     border: 1px solid #1a2e40;
+    position: relative;
 }
 
 .tarjeta-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
 }
 
 /* Estilo base para las tarjetas para que parezca que se pueden presionar */
