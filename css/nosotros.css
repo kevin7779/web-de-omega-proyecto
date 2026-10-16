@@ -220,7 +220,7 @@ nav a:hover, nav a.active {
     box-sizing: border-box;
 }
 
-/* --- Estilos para el efecto Spotlight en las tarjetas --- */
+/* --- Estilos para las tarjetas y el icono de la flechita --- */
 .tarjeta-card {
     background-color: #0b1724;
     border: 1px solid #1a2e40;
@@ -239,8 +239,23 @@ nav a:hover, nav a.active {
 }
 
 .tarjeta-card:hover {
-    border-color: #00c8ff;
+    border-color: #0088ff;
     transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 136, 255, 0.25);
+}
+
+/* Posición del icono de enlace externo (la flechita) */
+.tarjeta-card .tarjeta-icon-ext {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #0088ff;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-card:hover .tarjeta-icon-ext {
+    transform: scale(1.15);
 }
 
 .tarjeta-info {
@@ -283,53 +298,135 @@ nav a:hover, nav a.active {
     display: block !important;
 }
 
-/* Estilo de la ventana emergente (modal nativo) */
-.modal-info {
-    background-color: #111a2e; 
-    color: #ffffff;
-    border: 1px solid #2a3b5c;
-    border-radius: 10px;
-    padding: 25px;
-    width: 90%;
-    max-width: 450px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+/* ==========================================
+   VENTANA FLOTANTE (MODAL ESTILO CLARO EXACTO)
+   ========================================== */
+.modal-overlay-nosotros {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 7, 18, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.modal-info::backdrop {
-    background-color: rgba(0, 0, 0, 0.7);
+.modal-overlay-nosotros.active {
+    display: flex;
+    opacity: 1;
 }
 
-.modal-info h3 {
-    margin-top: 0;
-    color: #00ffcc;
-}
-
-.modal-info ul {
-    padding-left: 20px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.modal-info li {
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #d1d5db;
-}
-
-.modal-info button {
-    background-color: #00ffcc;
-    color: #0b111e;
+.modal-content-nosotros {
+    background: #ffffff;
+    color: #1e293b;
     border: none;
-    padding: 8px 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-    transition: background 0.2s;
+    padding: 35px;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    border-top: 5px solid #0088ff;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
 }
 
-.modal-info button:hover {
-    background-color: #3694ff;
+.modal-overlay-nosotros.active .modal-content-nosotros {
+    transform: scale(1);
+}
+
+.modal-close-nosotros {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #475569;
+    background: #f1f5f9;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.modal-close-nosotros:hover {
+    background: #0088ff;
+    color: #fff;
+}
+
+.modal-header-icon-nosotros {
+    font-size: 2rem;
+    color: #0088ff;
+    margin-bottom: 15px;
+}
+
+.modal-content-nosotros h3 {
+    color: #0f172a;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.modal-subtitle-nosotros {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.modal-grid-info-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-info-item-nosotros h5 {
+    color: #64748b;
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.modal-info-item-nosotros p {
+    color: #0f172a;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.modal-list-title-nosotros {
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.modal-list-nosotros {
+    padding-left: 20px;
+    color: #475569;
+    margin: 0;
+}
+
+.modal-list-nosotros li {
+    margin-bottom: 8px;
+    font-size: 0.92rem;
 }
 
 /* ==========================================
