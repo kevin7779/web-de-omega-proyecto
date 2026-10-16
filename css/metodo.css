@@ -15,7 +15,7 @@ body {
 header {
     background-color: #060d14;
     border-bottom: 1px solid #1a2e40;
-   position:fixed;
+   position:relative;
     padding: 15px 0;
 }
 
