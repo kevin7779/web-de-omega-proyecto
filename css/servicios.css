@@ -6,10 +6,12 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-.servicios-container {
+/* Espaciado general y corrección de posición para el header fijo/relativo */
+main, .servicios-container {
     max-width: 1100px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
 }
 
 .servicios-header {
@@ -96,46 +98,6 @@ body {
     line-height: 1.4;
 }
 
-@media (max-width: 768px) {
-    .grid-servicios {
-        grid-template-columns: 1fr;
-    }
-    .servicio-card.servicio-destacado {
-        grid-column: span 1;
-    }
-}
-
-/* --- CORRECCIÓN DE RESPONSIVIDAD PARA MÓVILES --- */
-@media (max-width: 768px) {
-  /* 1. Ordena el encabezado en una sola columna para que no se salgan los botones */
-  header > div {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  /* 2. Hace que la sección hero baje la tarjeta de informe debajo del texto */
-  .hero-container {
-    padding: 1rem;
-    grid-template-columns: 1fr;
-  }
-
-  /* 3. Ajusta los títulos grandes para que quepan en pantallas angostas */
-  .hero-texto h1 {
-    font-size: 1.75rem;
-  }
-
-  /* 4. Asegura que el aside ocupe exactamente el ancho disponible */
-  aside {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
 /* Indicador activo del menú (línea celeste) */
 header nav ul li a.active {
     position: relative;
@@ -150,7 +112,6 @@ header nav ul li a.active::after {
     height: 2px;
     background-color: #0ea5e9;
 }
-
 
 /* --- Estilos para las tarjetas interactivas --- */
 .tarjeta-card {
@@ -288,4 +249,14 @@ header nav ul li a.active::after {
 .modal-content li {
     margin-bottom: 6px;
     font-size: 0.95rem;
+}
+
+/* --- RESPONSIVIDAD GENERAL --- */
+@media (max-width: 768px) {
+    .grid-servicios {
+        grid-template-columns: 1fr;
+    }
+    .servicio-card.servicio-destacado {
+        grid-column: span 1;
+    }
 }
