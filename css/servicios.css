@@ -80,7 +80,9 @@ nav a:hover, nav a.active {
     transform: translateY(-1px);
 }
 
-/* Espaciado general y corrección de posición para el contenido */
+/* ==========================================
+   CONTENIDO PRINCIPAL Y TARJETAS
+   ========================================== */
 main, .servicios-container {
     max-width: 1100px;
     margin: 40px auto;
@@ -129,16 +131,33 @@ main, .servicios-container {
     display: flex;
     align-items: center;
     gap: 20px;
+    position: relative;
+    cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
 }
 
 .servicio-card:hover {
-    border-color: #00c8ff;
+    border-color: #0088ff;
     transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 136, 255, 0.25);
 }
 
 .servicio-card.servicio-destacado {
     grid-column: span 2;
+}
+
+/* Icono de enlace externo en la esquina superior derecha de la tarjeta */
+.servicio-card .servicio-icon-ext {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    color: #0088ff;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.servicio-card:hover .servicio-icon-ext {
+    transform: scale(1.15);
 }
 
 /* Formato y tamaño de las imágenes dentro de las tarjetas */
@@ -172,35 +191,9 @@ main, .servicios-container {
     line-height: 1.4;
 }
 
-/* Indicador activo del menú (línea celeste) */
-header nav ul li a.active {
-    position: relative;
-}
-
-header nav ul li a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #0ea5e9;
-}
-
-/* --- Estilos para las tarjetas interactivas --- */
-.tarjeta-card {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-.tarjeta-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 136, 255, 0.25);
-    border-color: #0088ff;
-}
-
-/* --- Estilos del Modal (Ventana Flotante en Modo Oscuro) --- */
+/* ==========================================
+   VENTANA FLOTANTE (MODAL ESTILO CLARO)
+   ========================================== */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -218,18 +211,18 @@ header nav ul li a.active::after {
 }
 
 .modal-content {
-    background: #081226;
-    border: 1px solid #132444;
+    background: #ffffff;
+    color: #1e293b;
+    border: none;
     padding: 35px;
     width: 90%;
-    max-width: 600px;
+    max-width: 650px;
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     position: relative;
     border-top: 5px solid #0088ff;
     transform: scale(0.9);
     transition: transform 0.3s ease;
-    color: #cbd5e1;
 }
 
 .modal-overlay.active {
@@ -245,10 +238,10 @@ header nav ul li a.active::after {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    color: #94a3b8;
-    background: #132444;
+    color: #475569;
+    background: #f1f5f9;
     border: none;
     width: 35px;
     height: 35px;
@@ -265,22 +258,22 @@ header nav ul li a.active::after {
 }
 
 .modal-header-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #0088ff;
     margin-bottom: 15px;
 }
 
 .modal-content h3 {
-    color: #ffffff;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    color: #0f172a;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
     font-weight: 700;
 }
 
 .modal-subtitle {
-    color: #94a3b8;
-    font-size: 1rem;
-    line-height: 1.6;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
@@ -288,44 +281,68 @@ header nav ul li a.active::after {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    background: #040d21;
-    border: 1px solid #132444;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
 .modal-info-item h5 {
-    color: #38bdf8;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
+    color: #64748b;
+    font-size: 0.75rem;
+    margin-bottom: 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 700;
 }
 
 .modal-info-item p {
-    color: #cbd5e1;
-    font-size: 0.95rem;
+    color: #0f172a;
+    font-size: 0.9rem;
     margin: 0;
+    font-weight: 600;
 }
 
 .modal-list-title {
     font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 8px;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
 }
 
 .modal-content ul {
     padding-left: 20px;
-    color: #94a3b8;
+    color: #475569;
+    margin: 0;
 }
 
 .modal-content li {
-    margin-bottom: 6px;
-    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
 }
 
-/* --- RESPONSIVIDAD GENERAL --- */
+/* ==========================================
+   PIE DE PÁGINA Y RESPONSIVIDAD
+   ========================================== */
+footer {
+    border-top: 1px solid #1a2e40;
+    margin-top: auto;
+    padding: 20px 0;
+    color: #718096;
+    font-size: 13px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
     .grid-servicios {
         grid-template-columns: 1fr;
@@ -333,4 +350,23 @@ header nav ul li a.active::after {
     .servicio-card.servicio-destacado {
         grid-column: span 1;
     }
+    .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+}
+
+header nav ul li a.active {
+    position: relative;
+}
+
+header nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0ea5e9;
 }
