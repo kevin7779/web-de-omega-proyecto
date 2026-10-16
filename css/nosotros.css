@@ -453,28 +453,52 @@ footer {
     justify-content: space-between;
     box-sizing: border-box;
 }
+
+ 
+
 /* =======================================================
    6. RESPONSIVO EN MÓVILES (AJUSTES DE HEADER Y CUADRÍCULA)
    ======================================================= */
 @media (max-width: 768px) {
+    body {
+        margin-top: 60px !important;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
     /* Ajustar el contenedor del encabezado para móviles */
     .header-container {
-        flex-direction: column;
-        gap: 12px;
-        padding: 10px 15px;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 0 15px !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .logo {
+        font-size: 16px;
+        margin-bottom: 5px;
     }
 
     /* Reducir el tamaño de la barra de navegación para que no se amontone */
     header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 12px;
-        padding: 0;
-        margin: 0;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px 14px !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     header nav ul li a {
-        font-size: 0.85rem;
+        font-size: 0.82rem !important;
+    }
+
+    .btn-registrate {
+        padding: 6px 12px !important;
+        font-size: 0.8rem !important;
     }
 
     /* Asegurar que las tarjetas de servicios/método bajen a una sola columna */
