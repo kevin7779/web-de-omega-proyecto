@@ -15,25 +15,18 @@ body {
 header {
     background-color: #060d14;
     border-bottom: 1px solid #1a2e40;
-    padding: 12px 0;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-sizing: border-box;
+    padding: 15px 0;
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
-    width: 100%;
 }
+
 .logo {
     color: #ffffff;
     font-weight: 700;
