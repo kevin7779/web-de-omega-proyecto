@@ -6,10 +6,10 @@
     <title>Servicios - Omega Ciberseguridad</title>
     <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
     
-    <!-- Hojas de estilo oficiales para mantener el diseño de las tarjetas -->
+    <!-- Hojas de estilo oficiales para mantener el diseño -->
     <link rel="stylesheet" href="css/nosotros.css">
     <link rel="stylesheet" href="css/servicios.css">
-    <!-- FontAwesome para que carguen los iconos correctamente -->
+    <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -42,11 +42,11 @@
             <p>Cinco servicios para que sepas dónde estás expuesto y qué arreglar primero.</p>
         </section>
 
-        <!-- Cuadrícula de Servicios con el estilo correcto -->
+        <!-- Cuadrícula de Servicios -->
         <section class="grid-servicios">
 
             <!-- 1. Pruebas de penetración -->
-            <article class="servicio-card">
+            <article class="servicio-card tarjeta-card" data-service="penetration">
                 <div class="servicio-media">
                     <img src="img2/pruebas.jpg" alt="Pruebas de penetración" onerror="this.src='img2/pruebas.png'">
                 </div>
@@ -54,10 +54,11 @@
                     <h3>Pruebas de penetración</h3>
                     <p>Atacamos tus sistemas con autorización, igual que lo haría un delincuente, y te mostramos por dónde entramos.</p>
                 </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
             </article>
 
             <!-- 2. Auditoría de redes -->
-            <article class="servicio-card">
+            <article class="servicio-card tarjeta-card" data-service="auditoria">
                 <div class="servicio-media">
                     <img src="img2/auditorias.jpg" alt="Auditoría de redes y firewall" onerror="this.src='img2/auditorias.png'">
                 </div>
@@ -65,10 +66,11 @@
                     <h3>Auditoría de redes y firewall</h3>
                     <p>Revisamos routers, switches, reglas de acceso y segmentación para cerrar lo que no debería estar abierto.</p>
                 </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
             </article>
 
             <!-- 3. Seguridad del correo y la nube -->
-            <article class="servicio-card">
+            <article class="servicio-card tarjeta-card" data-service="correo">
                 <div class="servicio-media">
                     <img src="img2/seguridad.jpg" alt="Seguridad del correo y la nube" onerror="this.src='img2/seguridad.png'">
                 </div>
@@ -76,10 +78,11 @@
                     <h3>Seguridad del correo y la nube</h3>
                     <p>Configuramos la protección contra suplantación y revisamos permisos en tus cuentas y servicios en la nube.</p>
                 </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
             </article>
 
             <!-- 4. Capacitación al personal -->
-            <article class="servicio-card">
+            <article class="servicio-card tarjeta-card" data-service="capacitacion">
                 <div class="servicio-media">
                     <img src="img2/capacitacion.jpg" alt="Capacitación al personal" onerror="this.src='img2/capacitacion.png'">
                 </div>
@@ -87,10 +90,11 @@
                     <h3>Capacitación al personal</h3>
                     <p>Talleres y simulacros de phishing para que tu equipo reconozca un engaño antes de hacer clic.</p>
                 </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
             </article>
 
             <!-- 5. Respuesta a incidentes -->
-            <article class="servicio-card servicio-destacado">
+            <article class="servicio-card servicio-destacado tarjeta-card" data-service="incidentes">
                 <div class="servicio-media">
                     <img src="img2/respuestas.jpg" alt="Respuesta a incidentes" onerror="this.src='img2/respuestas.png'">
                 </div>
@@ -98,11 +102,39 @@
                     <h3>Respuesta a incidentes</h3>
                     <p>Si ya te atacaron, contenemos el problema, recuperamos los sistemas y explicamos qué pasó.</p>
                 </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
             </article>
 
         </section>
 
     </main>
+
+    <!-- Ventana Flotante (Modal Estilo Claro) -->
+    <div id="serviceModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-icon"><i class="fa-solid fa-sliders"></i></div>
+            
+            <h3 id="modalTitle">Título del Servicio</h3>
+            <p id="modalSubtitle" class="modal-subtitle">Subtítulo descriptivo del servicio seleccionado.</p>
+            
+            <div class="modal-grid-info">
+                <div class="modal-info-item">
+                    <h5>DOCUMENTO CLAVE</h5>
+                    <p id="modalDocKey">Documento asociado</p>
+                </div>
+                <div class="modal-info-item">
+                    <h5>GARANTÍA</h5>
+                    <p id="modalWarranty">Garantía del servicio</p>
+                </div>
+            </div>
+
+            <div class="modal-list-title">Actividades principales de esta fase:</div>
+            <ul id="modalList">
+                <!-- Se llena dinámicamente con JS -->
+            </ul>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
