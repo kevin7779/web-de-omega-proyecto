@@ -124,14 +124,15 @@ header {
     overflow: hidden;
 }
 
-.header-container {
-    width: 100%;
-    margin: 0;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
+..header-container {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 30px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
 }
 .logo {
     color: #ffffff;
