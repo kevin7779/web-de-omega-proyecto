@@ -122,11 +122,6 @@ h1, h2 { font-family: 'Space Grotesk', sans-serif; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
 
 
-
-/* ==========================================
-   ENCABEZADO: ESTILO UNIFICADO CON SERVICIOS
-   ========================================== */
-
 .site-header {
     width: 100%;
     min-height: 59px;
