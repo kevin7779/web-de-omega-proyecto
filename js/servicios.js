@@ -128,3 +128,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.12 // Se activa cuando el 12% del elemento es visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Deja de observar una vez aplicado el efecto
+            }
+        });
+    }, observerOptions);
+
+    // Selecciona todos los elementos con la clase fade-in-element
+    const fadeElements = document.querySelectorAll(".fade-in-element");
+    fadeElements.forEach(el => observer.observe(el));
+});
