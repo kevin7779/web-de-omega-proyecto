@@ -190,6 +190,20 @@ main, .servicios-container {
     font-size: 13.5px;
     line-height: 1.4;
 }
+/* ==========================================
+   EFECTO DE DESVANECIMIENTO (FADE-IN)
+   ========================================== */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* ==========================================
    VENTANA FLOTANTE (MODAL ESTILO CLARO)
