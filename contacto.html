@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111b">
+  <meta name="description" content="Contacta con Omega Ciberseguridad para solicitar una consultoría o auditoría de seguridad informática.">
+  <title>Contacto | Omega Ciberseguridad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/contacto.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="js/contacto.js" defer></script>
+  <link rel="icon" href="img/logo-svg.svg" type="image/x-icon">
+</head>
+<body> 
+  <div class="background-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Omega Ciberseguridad, inicio">
+        <span class="brand-mark"><i class="fa-solid fa-shield-halved"></i></span>
+        <span>OMEGA <b>CIBERSEGURIDAD</b></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="servicios.html">Servicios</a>
+        <a href="metodo.html">Cómo trabajamos</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a class="active" href="contacto.html">Contacto</a>
+        <a class="login-link" href="login.html">Iniciar sesión</a>
+        <a class="nav-cta" href="registrate.html" class="btn-registrate">Regístrate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro page-width">
+      <div class="eyebrow"><span></span> HABLEMOS DE SEGURIDAD</div>
+      <h1>Tu seguridad digital<br><span>empieza aquí.</span></h1>
+      <p class="intro-copy">Cuéntanos qué necesitas proteger. Nuestro equipo te ayudará a encontrar la solución adecuada para tu organización.</p>
+      <div class="response-note"><i class="fa-regular fa-clock"></i><span>Respuestas en menos de 24 horas</span><span class="note-dot">•</span><span>Atención personalizada</span></div>
+    </section>
+
+    <section class="contact-layout page-width" aria-label="Información de contacto y formulario">
+      <aside class="contact-panel">
+        <div class="panel-topline"><span class="status-dot"></span> EQUIPO DE CONSULTORÍA</div>
+        <h2>Protegemos lo que<br>más importa.</h2>
+        <p class="panel-copy">Conversemos sobre los riesgos, objetivos y necesidades de seguridad de tu empresa.</p>
+
+        <div class="contact-method">
+          <div class="method-icon"><i class="fa-regular fa-envelope"></i></div>
+          <div><span class="method-label">ESCRÍBENOS</span><a href="mailto:contacto@omega.example">contacto@omega.example</a></div>
+          <i class="fa-solid fa-arrow-up-right-from-square method-arrow"></i>
+        </div>
+        <div class="contact-method">
+          <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div><span class="method-label">UBICACIÓN</span><p>Lima, Perú</p></div>
+        </div>
+        <div class="contact-method">
+          <div class="method-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div><span class="method-label">NUESTRO COMPROMISO</span><p>Confidencialidad y trabajo autorizado</p></div>
+        </div>
+
+        <div class="security-note">
+          <i class="fa-solid fa-lock"></i>
+          <p><strong>Tu información está en buenas manos.</strong><br>Tratamos cada consulta con discreción y profesionalismo.</p>
+        </div>
+        <div class="decorative-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+      </aside>
+
+      <section class="form-panel">
+        <div class="form-heading">
+          <div>
+            <div class="eyebrow small">SOLICITUD DE CONSULTORÍA</div>
+            <h2>Cuéntanos tu proyecto</h2>
+            <p>Completa el formulario y nos pondremos en contacto contigo.</p>
+          </div>
+          <div class="form-shield" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="field-grid">
+            <label class="field" for="nombre">Nombre completo <span>*</span>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Andrea Ramírez" required>
+            </label>
+            <label class="field" for="correo">Correo corporativo <span>*</span>
+              <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" required>
+            </label>
+            <label class="field" for="empresa">Empresa u organización
+              <input id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de tu empresa">
+            </label>
+            <label class="field" for="servicio">Servicio de interés
+              <select id="servicio" name="servicio">
+                <option value="Pruebas de penetración">Pruebas de penetración</option>
+                <option value="Auditoría de redes y firewall">Auditoría de redes y firewall</option>
+                <option value="Seguridad del correo y la nube">Seguridad del correo y la nube</option>
+                <option value="Capacitación al personal">Capacitación al personal</option>
+                <option value="Respuesta a incidentes">Respuesta a incidentes</option>
+                <option value="Consultoría general">Consultoría general</option>
+              </select>
+            </label>
+          </div>
+          <label class="field" for="mensaje">¿Cómo podemos ayudarte?
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente qué necesitas revisar o proteger..."></textarea>
+          </label>
+          <div class="form-bottom">
+            <p class="required-note"><span>*</span> Campos obligatorios</p>
+            <button type="submit" class="submit-button">Enviar solicitud <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p id="estado" class="form-status" role="status" aria-live="polite"></p>
+          <p class="privacy-note"><i class="fa-solid fa-lock"></i> Tus datos se utilizarán únicamente para responder a esta solicitud.</p>
+        </form>
+      </section>
+    </section>
+
+    <section class="bottom-trust page-width" aria-label="Compromisos de seguridad">
+      <div><i class="fa-solid fa-user-shield"></i><span><strong>Enfoque personalizado</strong><small>Soluciones según tus necesidades</small></span></div>
+      <div><i class="fa-solid fa-file-signature"></i><span><strong>Ética profesional</strong><small>Evaluaciones autorizadas</small></span></div>
+      <div><i class="fa-solid fa-lock"></i><span><strong>Confidencialidad</strong><small>Cuidado de tu información</small></span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 Omega Ciberseguridad</span>
+      <span>Pruebas siempre con autorización por escrito del cliente.</span></div>
+  </footer>
+</body>
+</html>
