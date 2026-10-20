@@ -106,6 +106,32 @@
             </article>
 
         </section>
+        <!-- Ventana Flotante (Modal Estilo Claro) -->
+    <div id="serviceModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-icon"><i class="fa-solid fa-sliders"></i></div>
+            
+            <h3 id="modalTitle">Título del Servicio</h3>
+            <p id="modalSubtitle" class="modal-subtitle">Subtítulo descriptivo del servicio seleccionado.</p>
+            
+            <div class="modal-grid-info">
+                <div class="modal-info-item">
+                    <h5>DOCUMENTO CLAVE</h5>
+                    <p id="modalDocKey">Documento asociado</p>
+                </div>
+                <div class="modal-info-item">
+                    <h5>GARANTÍA</h5>
+                    <p id="modalWarranty">Garantía del servicio</p>
+                </div>
+            </div>
+
+            <div class="modal-list-title">Actividades principales de esta fase:</div>
+            <ul id="modalList">
+                <!-- Se llena dinámicamente con JS -->
+            </ul>
+        </div>
+    </div>
 
     </main>
 
