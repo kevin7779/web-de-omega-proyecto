@@ -74,7 +74,7 @@ body {
 /* Puntos indicadores */
 .carousel-indicators {
     position: absolute;
-    bottom: 70px;
+    bottom: 245px;
     left: 50%;
     transform: translateX(-60%);
     display: flex;
