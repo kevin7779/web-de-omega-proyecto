@@ -83,5 +83,15 @@ form.addEventListener('submit', async (e) => {
     }
 
     form.reset();
-    mostrar('Cuenta creada. Revisa tu correo para confirmar tu registro.', 'ok');
+
+    // Si Supabase ya inició sesión (confirmación por correo desactivada), va al panel
+    if (data.session) {
+        mostrar('Cuenta creada. Redirigiendo…', 'ok');
+        setTimeout(() => { window.location.href = 'panel.html'; }, 1500);
+        return;
+    }
+
+    // Si falta confirmar el correo, va al inicio de sesión
+    mostrar('Cuenta creada. Revisa tu correo para confirmar tu registro. Te llevamos al inicio de sesión…', 'ok');
+    setTimeout(() => { window.location.href = 'login.html'; }, 4000);
 });

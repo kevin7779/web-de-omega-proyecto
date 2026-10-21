@@ -59,5 +59,10 @@ form.addEventListener('submit', async (e) => {
     }
 
     mostrar('Inicio de sesión exitoso. Redirigiendo…', 'ok');
-    window.location.href = 'index.html'; // Redirige al inicio
+    window.location.href = 'panel.html'; // Redirige al panel
+});
+
+// Si ya hay sesión (por ejemplo, tras confirmar el correo), va directo al panel
+db.auth.getSession().then(({ data }) => {
+    if (data.session) window.location.href = 'panel.html';
 });
