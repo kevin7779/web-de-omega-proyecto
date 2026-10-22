@@ -81,7 +81,21 @@ form.addEventListener('submit', async (e) => {
 
     if (error) {
         console.error('Error de Supabase:', error);
-        return mostrar('No se pudo crear la cuenta. Revisa los datos e inténtalo de nuevo.', 'error');
+
+        // Mensajes claros según el motivo real del fallo (el detalle técnico queda en la consola)
+        const mensajes = {
+            email_address_not_authorized: 'No pudimos enviar el correo de confirmación. Inténtalo más tarde o escríbenos desde Contacto.',
+            over_email_send_rate_limit: 'Hay muchos registros en este momento. Espera unos minutos e inténtalo de nuevo.',
+            weak_password: 'Esa contraseña es muy débil. Usa una más larga y variada.',
+            user_already_exists: 'Este correo ya está registrado. Intenta iniciar sesión.',
+            email_exists: 'Este correo ya está registrado. Intenta iniciar sesión.',
+            email_address_invalid: 'Escribe un correo electrónico válido.',
+            signup_disabled: 'Los registros están desactivados por el momento.'
+        };
+        return mostrar(
+            mensajes[error.code] || 'No se pudo crear la cuenta. Revisa los datos e inténtalo de nuevo.',
+            'error'
+        );
     }
 
     // Si el correo ya existe, Supabase devuelve un usuario sin identidades
