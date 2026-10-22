@@ -6,6 +6,11 @@
   <meta name="theme-color" content="#07111b">
   <meta name="description" content="Contacta con Omega Ciberseguridad para solicitar una consultoría o auditoría de seguridad informática.">
   <title>Contacto | Omega Ciberseguridad</title>
+  <meta property="og:title" content="Contacto | Omega Ciberseguridad">
+  <meta property="og:description" content="Contacta con Omega Ciberseguridad para solicitar una consultoría o auditoría de seguridad informática.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Omega Ciberseguridad">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -14,6 +19,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="js/contacto.js" defer></script>
   <link rel="icon" href="img/logo-svg.svg" type="image/x-icon">
+  <script src="js/auth-nav.js" defer></script>
 </head>
 <body> 
   <div class="background-grid" aria-hidden="true"></div>
@@ -80,6 +86,7 @@
         </div>
 
         <form id="contact-form" novalidate>
+          <input type="text" id="sitio-web" name="sitio_web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
           <div class="field-grid">
             <label class="field" for="nombre">Nombre completo <span>*</span>
               <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Andrea Ramírez" required>
@@ -109,7 +116,7 @@
             <button type="submit" class="submit-button">Enviar solicitud <i class="fa-solid fa-arrow-right"></i></button>
           </div>
           <p id="estado" class="form-status" role="status" aria-live="polite"></p>
-          <p class="privacy-note"><i class="fa-solid fa-lock"></i> Tus datos se utilizarán únicamente para responder a esta solicitud.</p>
+          <p class="privacy-note"><i class="fa-solid fa-lock"></i> Tus datos se utilizarán únicamente para responder a esta solicitud. Consulta nuestra <a href="privacidad.html" style="color:inherit;text-decoration:underline">política de privacidad</a>.</p>
         </form>
       </section>
     </section>
@@ -124,6 +131,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span>© 2026 Omega Ciberseguridad</span>
+      <span><a href="privacidad.html" style="color:inherit;text-decoration:underline">Política de privacidad</a></span>
       <span>Pruebas siempre con autorización por escrito del cliente.</span></div>
   </footer>
 </body>

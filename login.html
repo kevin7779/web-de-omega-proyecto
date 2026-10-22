@@ -9,6 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Iniciar Sesión - Omega Ciberseguridad</title>
+  <meta name="description" content="Inicia sesión en tu cuenta de Omega Ciberseguridad.">
+  <meta name="theme-color" content="#07111b">
+  <meta property="og:title" content="Iniciar Sesión - Omega Ciberseguridad">
+  <meta property="og:description" content="Inicia sesión en tu cuenta de Omega Ciberseguridad.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Omega Ciberseguridad">
+  <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
 
   <link rel="stylesheet" href="css/nosotros.css?v=2">
 
@@ -187,6 +195,9 @@
     #estado.ok { color: #48d597; }
 
     #estado.error { color: #ff7b72; }
+    .login-links { margin: 18px 0 0 0; text-align: center; font-size: 13px; color: #a0aec0; line-height: 1.9; }
+    .login-links a { color: #00c8ff; text-decoration: none; }
+    .login-links a:hover { text-decoration: underline; }
 
     .btn-login.active {
 
@@ -202,6 +213,7 @@
 
   </style>
 
+  <script src="js/auth-nav.js" defer></script>
 </head>
 
 <body>
@@ -285,6 +297,7 @@
         <button type="submit" id="btn-ingresar" class="btn-submit">Ingresar</button>
 
         <p id="estado" role="status" aria-live="polite"></p>
+        <p class="login-links"><a href="recuperar.html">¿Olvidaste tu contraseña?</a><br>¿No tienes cuenta? <a href="registrate.html">Regístrate</a></p>
 
       </form>
 
@@ -301,6 +314,7 @@
     <div class="footer-container">
 
       <span>© 2026 Omega Ciberseguridad</span>
+      <span><a href="privacidad.html" style="color:inherit;text-decoration:underline">Política de privacidad</a></span>
 
       <span>Pruebas siempre con autorización por escrito del cliente.</span>
 

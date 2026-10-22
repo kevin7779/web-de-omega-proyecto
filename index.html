@@ -4,9 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Inicio — Omega Ciberseguridad</title>
+  <meta name="theme-color" content="#07111b">
+  <meta property="og:title" content="Inicio — Omega Ciberseguridad">
+  <meta property="og:description" content="Omega Ciberseguridad: auditamos redes, sistemas y personas de tu empresa y te entregamos un informe claro, ordenado por gravedad.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Omega Ciberseguridad">
   <meta name="description" content="Omega Ciberseguridad: auditamos redes, sistemas y personas de tu empresa y te entregamos un informe claro, ordenado por gravedad.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
+  <script src="js/auth-nav.js" defer></script>
 </head>
 <body>
 
@@ -34,7 +41,7 @@
 <main>
   <section class="hero-section">
     <!-- Video de fondo de pantalla completa -->
-    <video autoplay muted loop playsinline id="video-fondo">
+    <video autoplay muted loop playsinline preload="auto" poster="video/poster.jpg" id="video-fondo">
       <source src="video/vecteezy_futuristic-cyber-security-background-digital-protection_69794160.mp4" type="video/mp4">
       Tu navegador no soporta el formato de video.
     </video>
@@ -90,17 +97,17 @@
     <h2>Qué revisamos</h2>
     <div class="que-grid">
       <a href="servicios.html" class="card">
-        <img src="img5/redes.svg" alt="" width="40" height="40">
+        <img loading="lazy" decoding="async" src="img5/redes.svg" alt="" width="40" height="40">
         <h3>Redes</h3>
         <p>Puertos abiertos, firewalls y accesos expuestos a internet.</p>
       </a>
       <a href="servicios.html" class="card">
-        <img src="img5/sistemas.svg" alt="" width="40" height="40">
+        <img loading="lazy" decoding="async" src="img5/sistemas.svg" alt="" width="40" height="40">
         <h3>Sistemas</h3>
         <p>Servidores, aplicaciones y copias de seguridad.</p>
       </a>
       <a href="servicios.html" class="card">
-        <img src="img5/personas.svg" alt="" width="40" height="40">
+        <img loading="lazy" decoding="async" src="img5/personas.svg" alt="" width="40" height="40">
         <h3>Personas</h3>
         <p>Contraseñas, phishing y hábitos del equipo.</p>
       </a>
@@ -114,22 +121,22 @@
 
     <div class="necesitas-grid">
       <article class="card">
-        <img src="img5/router.svg" alt="" width="28" height="28">
+        <img loading="lazy" decoding="async" src="img5/router.svg" alt="" width="28" height="28">
         <p>No estás seguro de si tus <span class="resaltado">routers, switches</span> o firewalls tienen <span class="resaltado">configuraciones vulnerables</span>.</p>
       </article>
 
       <article class="card">
-        <img src="img5/correo.svg" alt="" width="28" height="28">
+        <img loading="lazy" decoding="async" src="img5/correo.svg" alt="" width="28" height="28">
         <p>Temes que <span class="resaltado">tu equipo</span> sea víctima de phishing o suplantación de identidad por correo.</p>
       </article>
 
       <article class="card">
-        <img src="img5/alerta.svg" alt="" width="28" height="28">
+        <img loading="lazy" decoding="async" src="img5/alerta.svg" alt="" width="28" height="28">
         <p>Tu empresa maneja datos sensibles y carece de una <span class="resaltado">auditoría reciente</span> de seguridad.</p>
       </article>
 
       <article class="card">
-        <img src="img5/candado.svg" alt="" width="28" height="28">
+        <img loading="lazy" decoding="async" src="img5/candado.svg" alt="" width="28" height="28">
         <p>No cuentas con un plan de respuesta inmediato ante un ataque informático o <span class="resaltado">ransomware</span>.</p>
       </article>
     </div>
@@ -143,6 +150,7 @@
 <footer>
   <div>
     <span>© 2026 Omega Ciberseguridad</span>
+      <span><a href="privacidad.html" style="color:inherit;text-decoration:underline">Política de privacidad</a></span>
     <span>Pruebas siempre con autorización por escrito del cliente.</span>
   </div>
 </footer>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada - Omega Ciberseguridad</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07111b">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #060d14;
+      color: #e9eef3;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      text-align: center;
+    }
+    main { max-width: 480px; }
+    .codigo {
+      font-size: 96px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: #00c8ff;
+      margin: 0 0 8px 0;
+    }
+    h1 { margin: 0 0 12px 0; font-size: 26px; }
+    p { margin: 0 0 28px 0; color: #9db0c3; line-height: 1.6; }
+    .acciones { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    a {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 6px;
+      border: 1px solid #1f3a52;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    a.principal { background: #0099ff; border-color: #0099ff; }
+    a:hover { border-color: #00c8ff; }
+    a:focus-visible { outline: 2px solid #00c8ff; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="codigo" aria-hidden="true">404</p>
+    <h1>No encontramos esta página</h1>
+    <p>Puede que el enlace esté mal escrito o que la página ya no exista. Vuelve al inicio o escríbenos si necesitas ayuda.</p>
+    <div class="acciones">
+      <a class="principal" id="ir-inicio" href="/">Volver al inicio</a>
+      <a id="ir-contacto" href="/contacto.html">Contacto</a>
+    </div>
+  </main>
+  <script>
+    // En GitHub Pages el sitio vive dentro de una carpeta (/nombre-del-repositorio/).
+    // Esto calcula esa carpeta para que los botones funcionen desde cualquier dirección rota.
+    (function () {
+      var base = '/';
+      if (location.hostname.endsWith('github.io')) {
+        var primero = location.pathname.split('/')[1];
+        if (primero) base = '/' + primero + '/';
+      }
+      document.getElementById('ir-inicio').href = base;
+      document.getElementById('ir-contacto').href = base + 'contacto.html';
+    })();
+  </script>
+</body>
+</html>

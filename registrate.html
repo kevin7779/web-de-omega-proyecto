@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Omega Ciberseguridad</title>
+  <meta name="description" content="Crea tu cuenta corporativa en Omega Ciberseguridad para solicitar y monitorear auditorías de seguridad.">
+  <meta name="theme-color" content="#07111b">
+  <meta property="og:title" content="Registro - Omega Ciberseguridad">
+  <meta property="og:description" content="Crea tu cuenta corporativa en Omega Ciberseguridad para solicitar y monitorear auditorías de seguridad.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Omega Ciberseguridad">
+  <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
     <link rel="stylesheet" href="css/nosotros.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -167,12 +175,31 @@
         #estado.ok { color: #48d597; }
         #estado.error { color: #ff7b72; }
 
+        .consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 18px;
+            color: #cbd5e0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .consent input { margin-top: 3px; accent-color: #0099ff; }
+        .consent a, .ya-cuenta a { color: #00c8ff; }
+        .ya-cuenta {
+            margin: 14px 0 0 0;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 13px;
+        }
+
         @media (max-width: 600px) {
             .grid-2 {
                 grid-template-columns: 1fr;
             }
         }
     </style>
+  <script src="js/auth-nav.js" defer></script>
 </head>
 <body>
 
@@ -298,8 +325,15 @@
                     </div>
                 </div>
 
+                <label class="consent">
+                    <input type="checkbox" id="acepto" required>
+                    <span>Acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y el tratamiento de mis datos.</span>
+                </label>
+                <input type="text" id="sitio-web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+
                 <button type="submit" id="btn-registro" class="btn-register-submit">Crear Cuenta y Solicitar Auditoría</button>
                 <p id="estado" role="status" aria-live="polite"></p>
+                <p class="ya-cuenta">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
 
             </form>
 
@@ -311,6 +345,7 @@
     <footer>
         <div class="footer-container">
             <span>© 2026 Omega Ciberseguridad</span>
+      <span><a href="privacidad.html" style="color:inherit;text-decoration:underline">Política de privacidad</a></span>
             <span>Pruebas siempre con autorización por escrito del cliente.</span>
         </div>
     </footer>
