@@ -45,6 +45,13 @@ form.addEventListener('submit', async (e) => {
     const servicio = document.getElementById('servicio').value;
     const mensaje = document.getElementById('comentario').value.trim();
 
+    // Campo trampa anti-bots: si tiene contenido, se ignora el envío
+    if (document.getElementById('sitio-web').value) return;
+
+    if (!document.getElementById('acepto').checked) {
+        return mostrar('Debes aceptar la política de privacidad para continuar.', 'error');
+    }
+
     // Validaciones en el navegador (la base de datos también valida)
     if (password.length < 8) {
         return mostrar('La contraseña debe tener al menos 8 caracteres.', 'error');

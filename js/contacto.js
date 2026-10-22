@@ -15,6 +15,13 @@ const submitButton = form.querySelector('button[type="submit"]');
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
+  // Campo trampa anti-bots: si tiene contenido, se simula el envío y no se guarda nada
+  if (document.getElementById('sitio-web').value) {
+    form.reset();
+    statusMessage.textContent = 'Gracias. Tu mensaje ha sido registrado correctamente.';
+    return;
+  }
+
   const nombre = document.getElementById('nombre').value.trim();
   const correo = document.getElementById('correo').value.trim();
   const empresa = document.getElementById('empresa').value.trim();
