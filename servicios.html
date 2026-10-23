@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Omega Ciberseguridad</title>
+  <meta name="description" content="Pruebas de penetración, auditorías de redes, seguridad del correo y la nube, capacitación y respuesta a incidentes. Conoce los servicios de Omega Ciberseguridad.">
+  <meta name="theme-color" content="#07111b">
+  <meta property="og:title" content="Servicios - Omega Ciberseguridad">
+  <meta property="og:description" content="Pruebas de penetración, auditorías de redes, seguridad del correo y la nube, capacitación y respuesta a incidentes. Conoce los servicios de Omega Ciberseguridad.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Omega Ciberseguridad">
+    <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
+    
+    <!-- Hojas de estilo oficiales para mantener el diseño -->
+    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="css/servicios.css">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 5000 !important;
+    background-color: rgba(6, 13, 20, 0.95) !important;
+    backdrop-filter: blur(10px);
+  }
+  body { padding-top: 70px !important; }
+</style>
+  <script src="js/auth-nav.js" defer></script>
+</head>
+<body>
+
+    <!-- Encabezado / Menú Navegación -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-shield-halved"></i> OMEGA CIBERSEGURIDAD
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="servicios.html" class="active">Servicios</a></li>
+                    <li><a href="metodo.html">Cómo trabajamos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="login.html" class="btn-login">Iniciar sesión</a></li>
+                    <li><a href="registrate.html" class="btn-registrate">Regístrate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   <!-- BANNER / CARRUSEL AMPLIO DE VISTA PREVIA (SHOWCASE) -->
+  <div class="servicios-showcase">
+    <div class="showcase-header">
+      <span class="badge-etiqueta">Infraestructura Protegida</span>
+      <h3>Soluciones avanzadas en ciberseguridad corporativa</h3>
+      <p>Protegemos tus redes, sistemas y equipos de trabajo bajo los más altos estándares.</p>
+    </div>
+
+    <!-- Contenedor Principal del Carrusel Amplio -->
+    <div class="carrusel-banner-container">
+      
+      <!-- Botones de Navegación (Flechas) -->
+      <button class="carrusel-btn prev" id="btn-prev" aria-label="Anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <button class="carrusel-btn next" id="btn-next" aria-label="Siguiente">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <!-- Diapositivas -->
+      <div class="banner-slides-track">
+        
+        <!-- Diapositiva 1: Planeta -->
+        <div class="banner-slide active">
+          <img src="imgenesnosotros/planeta.jpeg" alt="Auditoría de Redes y Conectividad" class="slide-imagen">
+          <div class="slide-caption">
+            <h4>Auditoría de Redes y Conectividad Global</h4>
+            <p>Revisamos routers, switches, firewalls y accesos expuestos a internet para blindar la infraestructura de tu empresa.</p>
+          </div>
+        </div>
+
+        <!-- Diapositiva 2: Candado -->
+        <div class="banner-slide">
+          <img src="imgenesnosotros/lupa.jpg" alt="Blindaje y Cifrado de Datos" class="slide-imagen">
+          <div class="slide-caption">
+            <h4>Blindaje y Cifrado de Datos Críticos</h4>
+            <p>Evaluamos servidores, aplicaciones y copias de seguridad para prevenir filtraciones de información y ataques de ransomware.</p>
+          </div>
+        </div>
+
+        <!-- Diapositiva 3: Analista -->
+        <div class="banner-slide">
+          <img src="imgenesnosotros/persona.jpg" alt="Monitoreo y Pentesting" class="slide-imagen">
+          <div class="slide-caption">
+            <h4>Monitoreo Humano y Pruebas de Pentesting</h4>
+            <p>Simulamos ataques reales de phishing y evaluamos los hábitos de tu equipo para anticiparnos a cualquier amenaza.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Indicadores de puntos (Dots) -->
+      <div class="banner-dots">
+        <span class="b-dot active" data-slide="0"></span>
+        <span class="b-dot" data-slide="1"></span>
+        <span class="b-dot" data-slide="2"></span>
+      </div>
+
+    </div>
+  </div>
+
+    
+  </div>
+
+    <!-- Contenido Principal -->
+    <main class="servicios-container">
+
+        <section class="servicios-header">
+            <span class="tag-seccion">NUESTROS SERVICIOS</span>
+            <h1>Servicios de Ciberseguridad</h1>
+            <p>Cinco servicios para que sepas dónde estás expuesto y qué arreglar primero.</p>
+        </section>
+
+        <!-- Cuadrícula de Servicios -->
+        <section class="grid-servicios">
+
+            <!-- 1. Pruebas de penetración -->
+            <article class="servicio-card tarjeta-card" data-service="penetration">
+                <div class="servicio-media">
+                    <img loading="lazy" decoding="async" src="img2/pruebas.jpg" alt="Pruebas de penetración" onerror="this.src='img2/pruebas.png'">
+                </div>
+                <div class="servicio-info">
+                    <h3>Pruebas de penetración</h3>
+                    <p>Atacamos tus sistemas con autorización, igual que lo haría un delincuente, y te mostramos por dónde entramos.</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
+            </article>
+
+            <!-- 2. Auditoría de redes -->
+            <article class="servicio-card tarjeta-card" data-service="auditoria">
+                <div class="servicio-media">
+                    <img loading="lazy" decoding="async" src="img2/auditorias.jpg" alt="Auditoría de redes y firewall" onerror="this.src='img2/auditorias.png'">
+                </div>
+                <div class="servicio-info">
+                    <h3>Auditoría de redes y firewall</h3>
+                    <p>Revisamos routers, switches, reglas de acceso y segmentación para cerrar lo que no debería estar abierto.</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
+            </article>
+
+            <!-- 3. Seguridad del correo y la nube -->
+            <article class="servicio-card tarjeta-card" data-service="correo">
+                <div class="servicio-media">
+                    <img loading="lazy" decoding="async" src="img2/seguridad.jpg" alt="Seguridad del correo y la nube" onerror="this.src='img2/seguridad.png'">
+                </div>
+                <div class="servicio-info">
+                    <h3>Seguridad del correo y la nube</h3>
+                    <p>Configuramos la protección contra suplantación y revisamos permisos en tus cuentas y servicios en la nube.</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
+            </article>
+
+            <!-- 4. Capacitación al personal -->
+            <article class="servicio-card tarjeta-card" data-service="capacitacion">
+                <div class="servicio-media">
+                    <img loading="lazy" decoding="async" src="img2/capacitacion.jpg" alt="Capacitación al personal" onerror="this.src='img2/capacitacion.png'">
+                </div>
+                <div class="servicio-info">
+                    <h3>Capacitación al personal</h3>
+                    <p>Talleres y simulacros de phishing para que tu equipo reconozca un engaño antes de hacer clic.</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
+            </article>
+
+            <!-- 5. Respuesta a incidentes -->
+            <article class="servicio-card servicio-destacado tarjeta-card" data-service="incidentes">
+                <div class="servicio-media">
+                    <img loading="lazy" decoding="async" src="img2/respuestas.jpg" alt="Respuesta a incidentes" onerror="this.src='img2/respuestas.png'">
+                </div>
+                <div class="servicio-info">
+                    <h3>Respuesta a incidentes</h3>
+                    <p>Si ya te atacaron, contenemos el problema, recuperamos los sistemas y explicamos qué pasó.</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square servicio-icon-ext"></i>
+            </article>
+
+        </section>
+         <!-- Ventana Flotante (Modal Estilo Claro) -->
+    <div id="serviceModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-icon"><i class="fa-solid fa-sliders"></i></div>
+            
+            <h3 id="modalTitle">Título del Servicio</h3>
+            <p id="modalSubtitle" class="modal-subtitle">Subtítulo descriptivo del servicio seleccionado.</p>
+            
+            <div class="modal-grid-info">
+                <div class="modal-info-item">
+                    <h5>DOCUMENTO CLAVE</h5>
+                    <p id="modalDocKey">Documento asociado</p>
+                </div>
+                <div class="modal-info-item">
+                    <h5>GARANTÍA</h5>
+                    <p id="modalWarranty">Garantía del servicio</p>
+                </div>
+            </div>
+
+            <div class="modal-list-title">Actividades principales de esta fase:</div>
+            <ul id="modalList">
+                <!-- Se llena dinámicamente con JS -->
+            </ul>
+        </div>
+    </div>
+    </main>
+
+   <!-- SECTORES QUE ATENDEMOS -->
+<section class="sectores fade-in-element">
+  <div class="seccion-head">
+    <span class="tag-seccion">SECTORES</span>
+    <h2>Conocemos los riesgos de tu industria</h2>
+    <p>Cada sector enfrenta amenazas distintas. Adaptamos el servicio a las tuyas.</p>
+  </div>
+
+  <div class="sectores-grid">
+    <article class="sector-card">
+      <div class="sector-icon"><i class="fa-solid fa-building-columns"></i></div>
+      <h3>Banca y finanzas</h3>
+      <p>Fraude, suplantación de identidad y protección de datos de clientes.</p>
+    </article>
+    <article class="sector-card">
+      <div class="sector-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <h3>Salud</h3>
+      <p>Historias clínicas y sistemas que no pueden detenerse.</p>
+    </article>
+    <article class="sector-card">
+      <div class="sector-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <h3>Educación</h3>
+      <p>Datos de alumnos, plataformas virtuales y cuentas docentes.</p>
+    </article>
+    <article class="sector-card">
+      <div class="sector-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+      <h3>Comercio y retail</h3>
+      <p>Pagos en línea, tiendas virtuales y datos de compradores.</p>
+    </article>
+    <article class="sector-card">
+      <div class="sector-icon"><i class="fa-solid fa-industry"></i></div>
+      <h3>Industria y minería</h3>
+      <p>Redes operativas y continuidad de la producción.</p>
+    </article>
+    <article class="sector-card">
+      <div class="sector-icon"><i class="fa-solid fa-rocket"></i></div>
+      <h3>Pymes y startups</h3>
+      <p>Protección esencial sin necesidad de un área de TI grande.</p>
+    </article>
+  </div>
+</section>
+
+<!-- PAQUETES -->
+<section class="paquetes fade-in-element">
+  <div class="seccion-head">
+    <span class="tag-seccion">PAQUETES</span>
+    <h2>Elige el nivel de protección que necesitas</h2>
+    <p>Tres opciones para empezar. Todas se ajustan al tamaño de tu empresa.</p>
+  </div>
+
+  <div class="paquetes-grid">
+
+    <article class="plan-card">
+      <div class="plan-icon"><i class="fa-solid fa-shield"></i></div>
+      <h3>Esencial</h3>
+      <p class="plan-desc">Para saber dónde estás parado.</p>
+      <ul class="plan-list">
+        <li><i class="fa-solid fa-circle-check"></i> Auditoría de redes y firewall</li>
+        <li><i class="fa-solid fa-circle-check"></i> Seguridad del correo (SPF, DKIM, DMARC)</li>
+        <li><i class="fa-solid fa-circle-check"></i> Informe ejecutivo con prioridades</li>
+        <li><i class="fa-solid fa-circle-check"></i> Reunión de resultados</li>
+        <li><i class="fa-solid fa-circle-check"></i> Guía de buenas prácticas para el personal</li>
+        <li><i class="fa-solid fa-circle-check"></i> Auditoría de redes y firewall</li>
+      </ul>
+      <a href="contacto.html?plan=esencial" class="btn-plan">Cotizar</a>
+    </article>
+
+    <article class="plan-card plan-destacado">
+      <span class="plan-badge">Más elegido</span>
+      <div class="plan-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <h3>Avanzado</h3>
+      <p class="plan-desc">Para poner a prueba tus defensas.</p>
+      <ul class="plan-list">
+        <li><i class="fa-solid fa-circle-check"></i> Todo lo del plan Esencial</li>
+        <li><i class="fa-solid fa-circle-check"></i> Pruebas de penetración</li>
+        <li><i class="fa-solid fa-circle-check"></i> Simulacro de phishing</li>
+        <li><i class="fa-solid fa-circle-check"></i> Taller de capacitación al personal</li>
+        <li><i class="fa-solid fa-circle-check"></i> Re-test para validar correcciones</li>
+        <li><i class="fa-solid fa-circle-check"></i> Informe técnico con evidencias y cómo corregir</li>
+        <li><i class="fa-solid fa-circle-check"></i> Revisión básica de permisos en la nube</li>
+      </ul>
+      <a href="contacto.html?plan=avanzado" class="btn-plan btn-plan-primary">Cotizar</a>
+    </article>
+
+    <article class="plan-card">
+      <div class="plan-icon"><i class="fa-solid fa-lock"></i></div>
+      <h3>Integral</h3>
+      <p class="plan-desc">Protección completa y continua.</p>
+      <ul class="plan-list">
+        <li><i class="fa-solid fa-circle-check"></i> Todo lo del plan Avanzado</li>
+        <li><i class="fa-solid fa-circle-check"></i> Revisión de seguridad en la nube</li>
+        <li><i class="fa-solid fa-circle-check"></i> Plan de respuesta a incidentes</li>
+        <li><i class="fa-solid fa-circle-check"></i> Ejercicio de simulación de incidente</li>
+        <li><i class="fa-solid fa-circle-check"></i> Políticas de seguridad para la empresa</li>
+        <li><i class="fa-solid fa-circle-check"></i> Atención prioritaria ante incidentes</li>
+        <li><i class="fa-solid fa-circle-check"></i> Capacitación y simulacros de phishing recurrentes</li>
+        <li><i class="fa-solid fa-circle-check"></i> Seguimiento trimestral</li>
+      </ul>
+      <a href="contacto.html?plan=integral" class="btn-plan">Cotizar</a>
+    </article>
+
+  </div>
+</section>
+
+    <section class="metricas-section">
+    <div class="metrica-item">
+        <span class="metrica-numero">+150</span>
+        <span class="metrica-texto">Auditorías Realizadas</span>
+    </div>
+    <div class="metrica-item">
+        <span class="metrica-numero">99.8%</span>
+        <span class="metrica-texto">Vulnerabilidades Identificadas</span>
+    </div>
+    <div class="metrica-item">
+        <span class="metrica-numero">24/7</span>
+        <span class="metrica-texto">Atención a Incidentes</span>
+    </div>
+    <div class="metrica-item">
+        <span class="metrica-numero">0</span>
+        <span class="metrica-texto">Fugas de Información Registradas</span>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="cta-info">
+        <h2>¿No sabes qué servicio necesita tu empresa?</h2>
+        <p>Evaluamos tu infraestructura actual y te entregamos un diagnóstico inicial sin compromiso.</p>
+    </div>
+    <a href="contacto.html" class="btn-cta">Solicitar Diagnóstico Gratuito</a>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span>© 2026 Omega Ciberseguridad</span>
+      <span><a href="privacidad.html" style="color:inherit;text-decoration:underline">Política de privacidad</a></span>
+            <span>Pruebas siempre con autorización por escrito del cliente.</span>
+        </div>
+    </footer>
+    <!-- BOTÓN DE EMERGENCIA -->
+<div class="sos-wrap">
+  <div class="sos-panel" id="sosPanel" role="dialog" aria-label="Ayuda ante un ataque">
+    <button class="sos-close" id="sosClose" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <h4><i class="fa-solid fa-triangle-exclamation"></i> ¿Sufriste un ataque?</h4>
+    <p>Mantén la calma. Contáctanos ahora y te guiamos.</p>
+
+    <div class="sos-actions">
+      <a class="sos-btn sos-whatsapp"
+         href="https://wa.me/51999999999?text=Hola%2C%20sufr%C3%AD%20un%20incidente%20de%20seguridad%20y%20necesito%20ayuda."
+         target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp
+      </a>
+      <a class="sos-btn sos-call" href="tel:+51999999999">
+        <i class="fa-solid fa-phone"></i> Llamar a omegaciberseguridad
+      </a>
+    </div>
+
+    <div class="sos-tips">
+      <strong>Mientras llegamos:</strong>
+      <ul>
+        <li>Desconecta el equipo afectado de la red (cable o Wi-Fi).</li>
+        <li>No lo apagues ni borres nada.</li>
+        <li>No pagues ningún rescate sin consultarnos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="sos-fab" id="sosBtn" aria-expanded="false">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <span>Sufrí un ataque</span>
+  </button>
+</div>
+    <script src="js/servicios.js"></script>
+</body>
+</html>
