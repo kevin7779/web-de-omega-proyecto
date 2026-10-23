@@ -129,7 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 1. Verificar si el usuario ha iniciado sesión (usa la variable/token de tu auth-nav.js)
   // Ejemplo simulado usando localStorage:
-  const usuarioLogueado = localStorage.getItem('usuarioLogueado') || false; 
+  let usuarioLogueado = false;
+  try {
+    const guardada = localStorage.getItem('sb-tixyhsysyktnxxspsjtz-auth-token');
+    usuarioLogueado = Boolean(guardada && JSON.parse(guardada).refresh_token);
+  } catch (e) {
+    usuarioLogueado = false;
+  }
 
   if (usuarioLogueado) {
     promptLogin.classList.add('oculto');
