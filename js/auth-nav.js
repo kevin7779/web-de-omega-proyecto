@@ -64,4 +64,7 @@
     } else {
         ajustarMenu();
     }
+
+    // Las páginas vuelven a dibujar el menú al cargar; se ajusta de nuevo cuando terminan
+    window.addEventListener('load', ajustarMenu);
 })();
