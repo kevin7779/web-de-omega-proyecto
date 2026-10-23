@@ -454,3 +454,43 @@ footer {
     margin-top: 8px;
   }
 }
+
+/* Traductor al costado de Regístrate */
+.translator-menu {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.translator-menu .gtranslate_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.translator-menu .gtranslate_wrapper select,
+.translator-menu .gtranslate_wrapper .gt_selector {
+  width: 125px;
+  max-width: 100%;
+  padding: 8px 10px;
+  color: #cbd5e1 !important;
+  background: #07111b !important;
+  border: 1px solid #263746 !important;
+  border-radius: 5px !important;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.translator-menu .gtranslate_wrapper select option {
+  color: #cbd5e1;
+  background: #07111b;
+}
+
+/* Evita que el traductor se salga de la pantalla */
+@media (max-width: 768px) {
+  .translator-menu {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
