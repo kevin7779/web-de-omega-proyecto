@@ -123,68 +123,95 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const promptLogin = document.getElementById('comentario-login-prompt');
   const formComentario = document.getElementById('form-comentario');
-  
-  // 1. Verificar si el usuario ha iniciado sesión (usa la variable/token de tu auth-nav.js)
-  // Ejemplo simulado usando localStorage:
-  let usuarioLogueado = false;
-  try {
-    const guardada = localStorage.getItem('sb-tixyhsysyktnxxspsjtz-auth-token');
-    usuarioLogueado = Boolean(guardada && JSON.parse(guardada).refresh_token);
-  } catch (e) {
-    usuarioLogueado = false;
+  const contenedor = document.querySelector('.testimonios-grid');
+  if (!promptLogin || !formComentario || !contenedor || !window.supabase) return;
+
+  // Conexión con Supabase (la clave "publishable" es pública por diseño; la seguridad la dan las políticas RLS)
+  const db = window.supabase.createClient(
+    'https://tixyhsysyktnxxspsjtz.supabase.co',
+    'sb_publishable_43jIfpHrcapxjcSF6MPm1w_V0jh-ad1'
+  );
+
+  // Crea la tarjeta con textContent (nunca innerHTML) para que nadie pueda inyectar código en un comentario
+  function crearTarjeta(c) {
+    const iniciales = c.nombre.split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase();
+
+    const tarjeta = document.createElement('article');
+    tarjeta.className = 'card-testimonio';
+    tarjeta.setAttribute('data-category', 'todos');
+
+    const header = document.createElement('div');
+    header.className = 'testimonio-header';
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar-placeholder';
+    avatar.textContent = iniciales;
+    const info = document.createElement('div');
+    info.className = 'autor-info';
+    const h3 = document.createElement('h3');
+    h3.textContent = c.nombre;
+    const cargo = document.createElement('span');
+    cargo.textContent = c.cargo;
+    info.append(h3, cargo);
+    header.append(avatar, info);
+
+    const estrellas = document.createElement('div');
+    estrellas.className = 'estrellas';
+    estrellas.textContent = c.calificacion;
+
+    const texto = document.createElement('p');
+    texto.className = 'comentario';
+    texto.textContent = '"' + c.mensaje + '"';
+
+    tarjeta.append(header, estrellas, texto);
+    return tarjeta;
   }
 
-  if (usuarioLogueado) {
-    promptLogin.classList.add('oculto');
-    formComentario.classList.remove('oculto');
-  } else {
-    promptLogin.classList.remove('oculto');
-    formComentario.classList.add('oculto');
+  // 1. Mostrar el formulario solo si hay una sesión iniciada en Supabase
+  const { data: sesionData } = await db.auth.getSession();
+  const hayUsuario = Boolean(sesionData && sesionData.session);
+  promptLogin.classList.toggle('oculto', hayUsuario);
+  formComentario.classList.toggle('oculto', !hayUsuario);
+
+  // 2. Cargar los comentarios guardados (los más nuevos primero)
+  const { data: guardados, error: errorCarga } = await db
+    .from('comentarios')
+    .select('nombre, cargo, calificacion, mensaje')
+    .order('creado_en', { ascending: false })
+    .limit(20);
+
+  if (errorCarga) {
+    console.error('No se pudieron cargar los comentarios:', errorCarga);
+  } else if (guardados && guardados.length) {
+    // Los más nuevos van primero, arriba de los testimonios fijos
+    contenedor.prepend(...guardados.map(crearTarjeta));
   }
 
-  // 2. Manejo del envío de nuevo comentario
-  if (formComentario) {
-    formComentario.addEventListener('submit', (e) => {
-      e.preventDefault();
+  // 3. Guardar un comentario nuevo en la base de datos
+  formComentario.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-      const nombre = document.getElementById('autor-nombre').value;
-      const cargo = document.getElementById('autor-cargo').value;
-      const calificacion = document.getElementById('autor-calificacion').value;
-      const mensaje = document.getElementById('autor-mensaje').value;
+    const boton = formComentario.querySelector('button[type="submit"]');
+    const comentario = {
+      nombre: document.getElementById('autor-nombre').value.trim(),
+      cargo: document.getElementById('autor-cargo').value.trim(),
+      calificacion: document.getElementById('autor-calificacion').value,
+      mensaje: document.getElementById('autor-mensaje').value.trim()
+    };
 
-      // Obtener iniciales para el avatar
-      const iniciales = nombre.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    boton.disabled = true;
+    const { error } = await db.from('comentarios').insert(comentario);
+    boton.disabled = false;
 
-      // Buscar el contenedor de comentarios existente
-      const contenedorGrid = document.querySelector('.bento-grid') || document.querySelector('.testimonios-grid');
+    if (error) {
+      alert('No se pudo publicar tu comentario. Inténtalo de nuevo en unos minutos.');
+      return;
+    }
 
-      if (contenedorGrid) {
-        // Crear elemento HTML de la nueva tarjeta
-        const nuevaTarjeta = document.createElement('article');
-        nuevaTarjeta.className = 'bento-card'; // O 'card-testimonio' según el modelo que elegiste
-
-        nuevaTarjeta.innerHTML = `
-          <div class="bento-top">
-            <div class="avatar-glow">${iniciales}</div>
-            <div>
-              <h3>${nombre}</h3>
-              <span>${cargo}</span>
-            </div>
-            <div class="estrellas-modernas">${calificacion}</div>
-          </div>
-          <p class="bento-texto">"${mensaje}"</p>
-        `;
-
-        // Insertar al inicio de la lista de testimonios
-        contenedorGrid.prepend(nuevaTarjeta);
-
-        // Limpiar el formulario
-        formComentario.reset();
-        alert('¡Gracias! Tu comentario ha sido publicado exitosamente.');
-      }
-    });
-  }
+    contenedor.prepend(crearTarjeta(comentario));
+    formComentario.reset();
+    alert('¡Gracias! Tu comentario ha sido publicado exitosamente.');
+  });
 });
