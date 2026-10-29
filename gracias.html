@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracias - Omega Ciberseguridad</title>
+  <meta name="theme-color" content="#07111b">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
+
+  <link rel="stylesheet" href="css/nosotros.css">
+  <link rel="stylesheet" href="css/servicios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/checkout.css">
+
+  <style>
+    header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      z-index: 5000 !important;
+      background-color: rgba(6, 13, 20, 0.95) !important;
+      backdrop-filter: blur(10px);
+    }
+    body { padding-top: 70px !important; }
+
+    .checkout.gracias { max-width: 640px; text-align: center; padding-top: 60px; }
+    .gracias .g-icon { font-size: 56px; color: var(--co-accent); margin-bottom: 14px; }
+    .gracias .g-demo {
+      background: rgba(255, 232, 20, .12); border: 1px solid #ffe814; color: #ffe814;
+      border-radius: 8px; padding: 10px 14px; font-size: 13px; margin: 0 0 20px;
+    }
+    .gracias .g-detalle { text-align: left; margin: 22px 0; font-size: 14px; }
+    .gracias .g-detalle div { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--co-line); color: var(--co-muted); }
+    .gracias .g-detalle div:last-child { border-bottom: 0; }
+    .gracias .g-detalle strong { color: #fff; }
+    .gracias .g-acciones { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .gracias .g-acciones a { flex: 1; min-width: 160px; text-align: center; text-decoration: none; padding: 13px 16px; border-radius: 8px; font-weight: 700; }
+    .gracias .g-acciones a:hover { text-decoration: none; }
+    .gracias .g-primary { background: linear-gradient(180deg,#19bdff,#0a96ee); color: #fff !important; }
+    .gracias .g-sec { border: 1px solid var(--co-accent-2); color: #fff !important; }
+  </style>
+  <script src="js/auth-nav.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-shield-halved"></i> OMEGA CIBERSEGURIDAD
+      </a>
+      <nav>
+        <ul>
+          <li><a href="servicios.html" class="active">Servicios</a></li>
+          <li><a href="metodo.html">Cómo trabajamos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Iniciar sesión</a></li>
+          <li><a href="registrate.html" class="btn-registrate">Regístrate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="checkout gracias">
+    <div class="co-card">
+      <div class="g-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h1 style="font-size:28px">¡Gracias por tu pedido!</h1>
+      <p class="co-sub" id="gMensaje" style="margin-bottom:0">Recibimos tu solicitud. Te escribiremos por correo con los pasos para iniciar tu servicio.</p>
+
+      <div class="g-demo" id="gDemo" hidden>Modo demo: no se realizó ningún cobro real.</div>
+
+      <div class="g-detalle" id="gDetalle" hidden>
+        <div><span>Plan</span><strong id="gPlan"></strong></div>
+        <div><span>Total</span><strong id="gTotal"></strong></div>
+        <div><span>Correo de confirmación</span><strong id="gEmail"></strong></div>
+      </div>
+
+      <div class="g-acciones">
+        <a class="g-primary" href="servicios.html">Seguir viendo servicios</a>
+        <a class="g-sec" href="index.html">Ir al inicio</a>
+        <a class="g-sec" href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <span>© 2026 Omega Ciberseguridad</span>
+      <span><a href="privacidad.html" style="color:inherit;text-decoration:underline">Política de privacidad</a></span>
+      <span>Pruebas siempre con autorización por escrito del cliente.</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var demo = new URLSearchParams(location.search).get("demo") === "1";
+      document.getElementById("gDemo").hidden = !demo;
+      var p = null;
+      try { p = JSON.parse(sessionStorage.getItem("omega_pedido")); } catch (e) {}
+      if (!p) return;
+      document.getElementById("gDetalle").hidden = false;
+      document.getElementById("gPlan").textContent = p.nombrePlan || "";
+      document.getElementById("gTotal").textContent = "S/ " + Number(p.total || 0).toLocaleString("es-PE", { minimumFractionDigits: 2 });
+      document.getElementById("gEmail").textContent = p.email || "";
+    })();
+  </script>
+</body>
+</html>
