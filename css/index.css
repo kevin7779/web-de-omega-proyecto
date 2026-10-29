@@ -1,0 +1,1067 @@
+/* --- SECCIÓN HERO (INICIO / INDEX) --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+#video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.70);
+  z-index: 2;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  color: #ffffff;
+}
+
+.hero-texto h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-texto p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.75rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-buttons a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.btn-primary {
+  background-color: #0284c7;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 1px solid #475569;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+/* ==========================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
+header {
+    background-color: #060d14 !important;
+    border-bottom: 1px solid #1a2e40 !important;
+    padding: 15px 0 !important;
+    width: 100% !important;
+    position: sticky !important;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky !important;
+}
+
+/* Contenedor del header: más ancho, para que el logo quede más a la izquierda */
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Logo: tamaño y posición */
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header .logo i {
+  color: #00c8ff;
+  font-size: 18px;
+}
+
+header .logo span {
+  font-size: 16px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Enlaces del menú (Mismo color base para todos) */
+nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Solo cambia a blanco al pasar el ratón por encima */
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Evita que el enlace de la página activa cambie de color respecto a los demás */
+nav a.active {
+    color: #ffffff;
+    font-weight: 700;
+    border-bottom: 2px solid #00c8ff;
+    padding-bottom: 4px;
+}
+
+/* Botón azul "Regístrate" */
+.btn-registrate {
+    background-color: #0099ff;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-registrate:hover {
+    background-color: #0080ff;
+}
+/* ============================================================
+   AGREGADOS: detalles de la página principal
+   ============================================================ */
+
+/* --- SCROLL SUAVE --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- DETALLE EN HALLAZGOS --- */
+aside li small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* --- FRANJA DE CONFIANZA --- */
+.confianza {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  background-color: #1e293b;
+  border-top: 1px solid #475569;
+  border-bottom: 1px solid #475569;
+  text-align: center;
+}
+
+.dato strong {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.dato span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* SECCIÓN DE CLIENTES QUE CONFÍAN */
+.clientes-confianza {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid #1a2a3a; /* Línea divisoria sutil */
+}
+
+.clientes-titulo {
+  color: #7b8f9e;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.clientes-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px 50px;
+}
+
+.cliente-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Formato y estilo de los logos */
+.cliente-item img,
+.cliente-item .logo-svg {
+  height: 35px;
+  width: auto;
+  max-width: 130px;
+  /* Convierte cualquier imagen de color a escala de grises clara acorde a la web */
+  filter: grayscale(100%) brightness(1.5);
+  fill: #8b9bb4;
+}
+
+/* Efecto hover: Ilumina el logo en azul cian neón */
+.cliente-item:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.cliente-item:hover img,
+.cliente-item:hover .logo-svg {
+  filter: grayscale(0%) drop-shadow(0 0 8px rgba(0, 153, 255, 0.6));
+  fill: #0099ff;
+}
+/* SECCIÓN DE TESTIMONIOS - ESTILO BENTO */
+.testimonios-moderno {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonios-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.badge-etiqueta {
+  background: rgba(0, 153, 255, 0.1);
+  color: #0099ff;
+  border: 1px solid rgba(0, 153, 255, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.testimonios-intro h2 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 16px 0 10px 0;
+  font-weight: 700;
+}
+
+.testimonios-intro p {
+  color: #8b9bb4;
+  font-size: 1rem;
+}
+
+/* Grilla Bento */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.bento-card {
+  background: linear-gradient(135deg, rgba(15, 28, 42, 0.8) 0%, rgba(10, 18, 28, 0.9) 100%);
+  border: 1px solid rgba(26, 42, 58, 0.8);
+  border-radius: 12px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Tarjeta principal ocupa toda la fila superior o destaca más */
+.bento-principal {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(15, 32, 50, 0.9) 0%, rgba(8, 16, 25, 0.95) 100%);
+  border: 1px solid rgba(0, 153, 255, 0.3);
+}
+
+.bento-card:hover {
+  border-color: #0099ff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 153, 255, 0.15);
+}
+
+.bento-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.avatar-glow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0099ff 0%, #0055ff 100%);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(0, 153, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.bento-top h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.bento-top span {
+  color: #7b8f9e;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 2px;
+}
+
+.estrellas-modernas {
+  color: #ffb400;
+  font-size: 1rem;
+  margin-left: auto;
+  letter-spacing: 2px;
+}
+
+.bento-texto {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.bento-card .resaltado {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.bento-footer-tag {
+  border-top: 1px solid rgba(26, 42, 58, 0.6);
+  padding-top: 14px;
+  margin-top: 15px;
+}
+
+.bento-footer-tag span {
+  color: #0099ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-principal {
+    grid-column: span 1;
+  }
+  .estrellas-modernas {
+    display: none; /* Oculta estrellas sueltas en pantallas muy chicas para ordenar espacio */
+  }
+}
+/* --- SECCIÓN QUÉ REVISAMOS --- */
+.que-revisamos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.que-revisamos h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.que-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.que-grid .card {
+  background-color: rgba(30, 41, 59, 0.85);
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.que-grid .card:hover {
+  border-color: #38bdf8;
+}
+
+.que-grid .card img {
+  width: 40px;
+  height: 40px;
+}
+
+.que-grid .card h3 {
+  color: #f8fafc;
+  margin: 0.5rem 0;
+}
+
+.que-grid .card p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* --- SECCIÓN: USTED NECESITA NUESTRA CONSULTORÍA SI... --- */
+.necesitas {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+  text-align: center;
+}
+
+.necesitas h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.necesitas-sub {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.necesitas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.necesitas-grid .card {
+  background-color: rgba(30, 41, 59, 0.85);
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: left;
+  transition: border-color 0.2s ease;
+}
+
+.necesitas-grid .card:hover {
+  border-color: #38bdf8;
+}
+
+.necesitas-grid .card img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.necesitas-grid .card p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.resaltado {
+  color: #fb923c;
+  font-weight: 500;
+}
+
+/* --- TARJETAS DE "QUÉ REVISAMOS" COMO ENLACE --- */
+.que-grid a.card {
+  display: block;
+  text-decoration: none;
+}
+
+/* --- BOTÓN DEBAJO DE "USTED NECESITA..." --- */
+.necesitas-cta {
+  margin-top: 2.5rem;
+}
+
+.necesitas-cta .btn-primary {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+/* SECCIÓN DE TESTIMONIOS-INDEX */
+.testimonios {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonios h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.testimonios-sub {
+  color: #8b9bb4;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card-testimonio {
+  background: #0f1c2a; /* Fondo idéntico a las tarjetas actuales */
+  border: 1px solid #1a2a3a;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-testimonio:hover {
+  border-color: #0099ff;
+  transform: translateY(-4px);
+}
+
+.testimonio-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.avatar-placeholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0099ff;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.autor-info h3 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.autor-info span {
+  color: #7b8f9e;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 2px;
+}
+
+.estrellas {
+  color: #ffb400;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.comentario {
+  color: #a0aec0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-testimonio .resaltado {
+  color: #ff9900; /* Coincide con las palabras clave en naranja de tus tarjetas */
+  font-weight: 600;
+}
+/* ESTILOS DE FILTROS Y CERTIFICACIONES */
+
+/* 1. Botones de Filtro */
+.filtro-contenedor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.btn-filtro {
+  background: #0b131c;
+  border: 1px solid #1a2a3a;
+  color: #8b9bb4;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+  border-color: #0099ff;
+  color: #ffffff;
+}
+
+.btn-filtro.active {
+  background: #0099ff;
+  color: #ffffff;
+  border-color: #0099ff;
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.3);
+}
+
+/* Transición suave para ocultar/mostrar tarjetas */
+.card-testimonio {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-testimonio.oculto {
+  display: none !important;
+}
+/* FORMULARIO Y PROMPT DE COMENTARIOS */
+.comentario-form-container {
+  max-width: 700px;
+  margin: 50px auto 0 auto;
+}
+
+/* Estado de Invitación a Iniciar Sesión */
+.comentario-box-prompt {
+  background: rgba(15, 28, 42, 0.8);
+  border: 1px dashed #1a2a3a;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.prompt-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.comentario-box-prompt h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.comentario-box-prompt p {
+  color: #8b9bb4;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.prompt-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Formulario de Comentario */
+.comentario-form {
+  background: #0f1c2a;
+  border: 1px solid #1a2a3a;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+}
+
+.comentario-form h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0 0 6px 0;
+}
+
+.comentario-form p {
+  color: #7b8f9e;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.form-group-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: #07111b;
+  border: 1px solid #1a2a3a;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0099ff;
+}
+
+/* Clase de utilidad para ocultar */
+.oculto {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .form-group-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2. Franja de Certificaciones */
+.certificaciones-contenedor {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #1a2a3a;
+}
+
+.cert-titulo {
+  color: #7b8f9e;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.cert-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cert-badge {
+  background: rgba(15, 28, 42, 0.6);
+  border: 1px solid #1a2a3a;
+  border-radius: 8px;
+  padding: 12px 20px;
+  text-align: center;
+  min-width: 140px;
+  transition: border-color 0.2s ease;
+}
+
+.cert-badge:hover {
+  border-color: #0099ff;
+}
+
+.cert-badge strong {
+  display: block;
+  color: #0099ff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.cert-badge span {
+  display: block;
+  color: #7b8f9e;
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+/* ==========================================
+   5. PIE DE PÁGINA
+   ========================================== */
+footer {
+    border-top: 1px solid #1a2e40;
+    margin-top: auto;
+    padding: 20px 0;
+    color: #718096;
+    font-size: 13px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* =======================================================
+   6. RESPONSIVO EN MÓVILES
+   ======================================================= */
+@media (max-width: 768px) {
+    body {
+        margin-top: 0 !important;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 0 15px !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .logo {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    header nav ul {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px 14px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    header nav ul li a {
+        font-size: 0.82rem !important;
+    }
+
+    .btn-registrate {
+        padding: 6px 12px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .grid-servicios, .grid-metodo, .grid-2x2 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+header nav ul li a.active {
+    position: relative;
+}
+
+header nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0ea5e9;
+}
+/* ==========================================
+   BOTÓN DE EMERGENCIA "SUFRÍ UN ATAQUE"
+   ========================================== */
+.sos-wrap {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1200;
+}
+.sos-fab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+    transition: transform 0.2s;
+}
+.sos-fab:hover {
+    transform: translateY(-2px);
+    color: #ffffff !important;
+ }
+.sos-fab::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    border: 2px solid rgba(239, 68, 68, 0.7);
+    animation: sosPulse 2s ease-out infinite;
+    pointer-events: none;
+}
+.sos-fab div h4 i {
+    color: #ffffff !important;
+}
+@keyframes sosPulse {
+    0%   { transform: scale(1);    opacity: 0.8; }
+    100% { transform: scale(1.35); opacity: 0; }
+}
+
+.sos-panel {
+    position: absolute;
+    right: 0;
+    bottom: 66px;
+    width: 330px;
+    background: #0b1724;
+    border: 1px solid #1a2e40;
+    border-top: 3px solid #ef4444;
+    border-radius: 14px;
+    padding: 24px 22px 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.97);
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+.sos-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+.sos-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #132436;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.sos-close:hover { background: #ef4444; color: #fff; }
+.sos-panel h4 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sos-panel h4 i { color: #f87171; }
+.sos-panel > p {
+    margin: 0 0 16px;
+    color: #a0aec0;
+    font-size: 13.5px;
+}
+.sos-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.sos-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.2s;
+}
+.sos-whatsapp { background: #16a34a; }
+.sos-whatsapp:hover { background: #22c55e; box-shadow: 0 0 16px rgba(34, 197, 94, 0.4); }
+.sos-call { background: #0088ff; }
+.sos-call:hover { background: #00c8ff; box-shadow: 0 0 16px rgba(0, 200, 255, 0.4); }
+.sos-tips {
+    background: #08121d;
+    border: 1px solid #1a2e40;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: #cbd5e1;
+}
+.sos-tips strong { color: #fff; display: block; margin-bottom: 6px; }
+.sos-tips ul { margin: 0; padding-left: 18px; }
+.sos-tips li { margin-bottom: 4px; line-height: 1.4; }
