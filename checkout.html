@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Omega Ciberseguridad</title>
+  <meta name="description" content="Contrata tu plan de protección con Omega Ciberseguridad.">
+  <meta name="theme-color" content="#07111b">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
+
+  <!-- Mismas hojas de estilo que servicios.html (header y footer idénticos) -->
+  <link rel="stylesheet" href="css/nosotros.css">
+  <link rel="stylesheet" href="css/servicios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Estilos propios del checkout (todos aislados bajo .checkout) -->
+  <link rel="stylesheet" href="css/checkout.css">
+
+  <style>
+    header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      z-index: 5000 !important;
+      background-color: rgba(6, 13, 20, 0.95) !important;
+      backdrop-filter: blur(10px);
+    }
+    body { padding-top: 70px !important; }
+  </style>
+  <script src="js/auth-nav.js" defer></script>
+</head>
+<body>
+
+  <!-- Encabezado / Menú Navegación (igual que servicios.html) -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-shield-halved"></i> OMEGA CIBERSEGURIDAD
+      </a>
+      <nav>
+        <ul>
+          <li><a href="servicios.html" class="active">Servicios</a></li>
+          <li><a href="metodo.html">Cómo trabajamos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Iniciar sesión</a></li>
+          <li><a href="registrate.html" class="btn-registrate">Regístrate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="checkout">
+    <a class="co-back" href="servicios.html#paquetes-seccion"><i class="fa-solid fa-arrow-left"></i> Volver a servicios</a>
+    <h1>¡Excelente elección!</h1>
+    <p class="co-sub">Completa tus datos para contratar tu plan de protección.</p>
+
+    <div class="co-grid">
+
+      <!-- ============ COLUMNA IZQUIERDA ============ -->
+      <section class="co-col-left">
+
+        <!-- PASO 1 -->
+        <div class="co-card co-step" id="step1">
+          <h2>1. Introduce tu información de facturación</h2>
+
+          <form id="formFacturacion" novalidate>
+            <div class="co-field">
+              <div class="co-label-row">
+                <label for="email">Email*</label>
+                <span class="co-hint">Enviaremos los detalles de la compra a este correo</span>
+              </div>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <small class="co-error"></small>
+            </div>
+
+            <div class="co-field">
+              <label for="pais">País*</label>
+              <select id="pais" name="pais" required>
+                <option value="PE" selected>Perú</option>
+                <option value="CL">Chile</option>
+                <option value="CO">Colombia</option>
+                <option value="EC">Ecuador</option>
+                <option value="AR">Argentina</option>
+                <option value="BO">Bolivia</option>
+                <option value="MX">México</option>
+                <option value="OT">Otro</option>
+              </select>
+            </div>
+
+            <div class="co-row">
+              <div class="co-field">
+                <label for="nombre">Nombre*</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="given-name" required>
+                <small class="co-error"></small>
+              </div>
+              <div class="co-field">
+                <label for="apellidos">Apellidos*</label>
+                <input type="text" id="apellidos" name="apellidos" autocomplete="family-name" required>
+                <small class="co-error"></small>
+              </div>
+            </div>
+
+            <div class="co-row">
+              <div class="co-field">
+                <label for="empresa">Empresa (opcional)</label>
+                <input type="text" id="empresa" name="empresa" autocomplete="organization">
+              </div>
+              <div class="co-field">
+                <label for="documento">RUC / DNI (opcional)</label>
+                <input type="text" id="documento" name="documento" inputmode="numeric" maxlength="11">
+              </div>
+            </div>
+
+            <div class="co-field">
+              <div class="co-label-row">
+                <label for="direccion">Dirección*</label>
+                <span class="co-hint">Ejemplo: Av. Larco 345, Of. 502</span>
+              </div>
+              <input type="text" id="direccion" name="direccion" autocomplete="street-address" required>
+              <small class="co-error"></small>
+            </div>
+
+            <div class="co-row">
+              <div class="co-field">
+                <label for="cp">Código postal</label>
+                <input type="text" id="cp" name="cp" autocomplete="postal-code">
+              </div>
+              <div class="co-field">
+                <label for="ciudad">Ciudad*</label>
+                <input type="text" id="ciudad" name="ciudad" autocomplete="address-level2" required>
+                <small class="co-error"></small>
+              </div>
+            </div>
+
+            <div class="co-field">
+              <label for="telefono">Teléfono*</label>
+              <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+              <small class="co-error"></small>
+            </div>
+
+            <label class="co-check">
+              <input type="checkbox" id="marketing" name="marketing">
+              <span>Autorizo a Omega Ciberseguridad a enviarme ofertas, recordatorios y noticias, de acuerdo con la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>. (opcional)</span>
+            </label>
+
+            <button type="submit" class="co-btn-primary">Continuar con el siguiente paso</button>
+          </form>
+
+          <div class="co-resumen-datos" id="resumenDatos" hidden>
+            <div>
+              <strong id="rdNombre"></strong>
+              <span id="rdEmail"></span>
+            </div>
+            <button type="button" class="co-link-btn" id="btnEditar">Editar</button>
+          </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="co-card co-step co-disabled" id="step2">
+          <h2>2. Agrega los datos de pago</h2>
+
+          <div class="co-step-body" id="step2Body" hidden>
+            <div class="co-tabs" role="tablist">
+              <button type="button" class="co-tab co-active" data-metodo="tarjeta"><i class="fa-regular fa-credit-card"></i> Tarjeta</button>
+              <button type="button" class="co-tab" data-metodo="yape"><i class="fa-solid fa-mobile-screen"></i> Yape / Plin</button>
+              <button type="button" class="co-tab" data-metodo="transferencia"><i class="fa-solid fa-building-columns"></i> Transferencia</button>
+            </div>
+
+            <!-- TARJETA: aquí se monta el formulario seguro de tu pasarela -->
+            <div class="co-panel co-active" data-panel="tarjeta">
+              <div id="pasarela-contenedor" class="co-pasarela">
+                <p>Aquí se carga el formulario seguro de tu pasarela de pago (Culqi, Niubiz, Izipay, Mercado Pago, Stripe…).</p>
+                <p class="co-mini">Los datos de la tarjeta nunca pasan por tu servidor: los captura la pasarela.</p>
+              </div>
+            </div>
+
+            <div class="co-panel" data-panel="yape">
+              <p>Yapea o haz Plin al número indicado e ingresa el número de operación.</p>
+              <div class="co-pasarela">
+                <p><strong>Yape / Plin:</strong> 999 999 999 — Omega Ciberseguridad</p>
+              </div>
+              <div class="co-field">
+                <label for="comprobante">N.º de operación</label>
+                <input type="text" id="comprobante" name="comprobante">
+              </div>
+            </div>
+
+            <div class="co-panel" data-panel="transferencia">
+              <p>Realiza la transferencia y envíanos el voucher. Activaremos tu servicio al confirmar el pago.</p>
+              <div class="co-pasarela">
+                <p><strong>Banco:</strong> BCP · <strong>Cuenta:</strong> 000-0000000-0-00</p>
+                <p><strong>CCI:</strong> 000 000 0000000000 00 · <strong>Titular:</strong> Omega Ciberseguridad S.A.C.</p>
+              </div>
+            </div>
+
+            <label class="co-check">
+              <input type="checkbox" id="terminos" required>
+              <span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>.</span>
+            </label>
+            <small class="co-error" id="errTerminos"></small>
+
+            <button type="button" class="co-btn-primary" id="btnPagar">Pagar <span id="btnPagarMonto"></span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ COLUMNA DERECHA ============ -->
+      <aside class="co-col-right">
+        <div class="co-card">
+          <h2 class="co-resumen-title">Resumen de tu pedido</h2>
+
+          <div class="co-item">
+            <div class="co-item-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="co-item-info">
+              <strong id="planNombre">Plan</strong>
+              <span id="planDesc"></span>
+            </div>
+            <div class="co-item-precio">
+              <span class="co-tachado" id="planTachado" hidden></span>
+              <strong id="planPrecio"></strong>
+            </div>
+          </div>
+
+          <div class="co-plan-switch" id="planSwitch" role="group" aria-label="Cambiar de plan"></div>
+
+          <ul class="co-incluye" id="planIncluye"></ul>
+
+          <div id="ahorroBadge" class="co-ahorro" hidden></div>
+
+          <dl class="co-totales">
+            <div><dt>Subtotal</dt><dd id="tSubtotal"></dd></div>
+            <div id="filaDescuento" hidden><dt>Descuento</dt><dd id="tDescuento"></dd></div>
+            <div><dt>IGV (18%)</dt><dd id="tIgv"></dd></div>
+            <div class="co-total"><dt>TOTAL:</dt><dd id="tTotal"></dd></div>
+          </dl>
+
+          <button type="button" class="co-link-btn co-promo-toggle" id="promoToggle">¿Tienes un código promocional?</button>
+          <form class="co-promo" id="promoForm" hidden>
+            <input type="text" id="promoInput" placeholder="Código" autocomplete="off">
+            <button type="submit" class="co-btn-outline">Aplicar</button>
+          </form>
+          <small id="promoMsg" class="co-promo-msg"></small>
+
+          <p class="co-nota">Recibirás la confirmación y los pasos para iniciar tu servicio por correo, justo después del pago.</p>
+          <p class="co-garantia"><i class="fa-solid fa-circle-check"></i> Atención a incidentes 24/7</p>
+        </div>
+
+        <div class="co-card co-info">
+          <p><a href="servicios.html">Más información</a> sobre nuestros servicios.</p>
+          <p>Los precios se muestran en soles (PEN). Se emitirá boleta o factura según los datos ingresados.</p>
+          <p>¿Dudas antes de pagar? <a href="contacto.html">Escríbenos</a>.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer (igual que servicios.html) -->
+  <footer>
+    <div class="footer-container">
+      <span>© 2026 Omega Ciberseguridad</span>
+      <span><a href="privacidad.html" style="color:inherit;text-decoration:underline">Política de privacidad</a></span>
+      <span>Pruebas siempre con autorización por escrito del cliente.</span>
+    </div>
+  </footer>
+
+  <script src="js/checkout.js"></script>
+</body>
+</html>
