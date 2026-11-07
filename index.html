@@ -15,6 +15,8 @@
   <link rel="icon" type="image/svg+xml" href="imgenesnosotros/logo-svg.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/index.css">
+  <!-- NUEVO: estilos de las noticias -->
+  <link rel="stylesheet" href="css/noticias.css">
   <style>
   header {
     position: fixed !important;
@@ -428,6 +430,18 @@
     </div>
   </section>
 
+<!-- NUEVO: ÚLTIMAS NOTICIAS -->
+<section class="noticias-inicio">
+  <div class="noticias-inicio-head">
+    <div>
+      <span class="noti-etiqueta">NOTICIAS</span>
+      <h2>Últimas noticias</h2>
+    </div>
+    <a href="noticias.html" class="noti-btn-mas">Ver más noticias</a>
+  </div>
+  <div class="noti-grid" id="noticias-inicio-grid"></div>
+</section>
+
  <!-- Pie de página -->
     <footer>
         <div class="footer-container">
@@ -468,6 +482,8 @@
   </button>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/index.js"></script>
+<!-- NUEVO: script de las noticias -->
+<script src="js/noticias.js"></script>
   
 </body>
 </html>
