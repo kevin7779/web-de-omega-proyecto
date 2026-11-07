@@ -67,4 +67,36 @@
 
     // Las páginas vuelven a dibujar el menú al cargar; se ajusta de nuevo cuando terminan
     window.addEventListener('load', ajustarMenu);
+
+    // ===== NUEVO: bloqueo de información si no hay sesión =====
+
+    // 1) Iconos / enlaces / botones con la clase "requiere-sesion"
+    document.addEventListener('click', function (e) {
+        var el = e.target.closest ? e.target.closest('.requiere-sesion') : null;
+        if (el && !haySesion()) {
+            e.preventDefault();
+            e.stopPropagation();
+            alert('Primero inicia sesión para ver esta información.');
+            window.location.href = 'login.html';
+        }
+    }, true);
+
+    // 2) Páginas completas con el atributo "data-protegida" en el body
+    function protegerPagina() {
+        var body = document.body;
+        if (!body || !body.hasAttribute('data-protegida')) return;
+
+        if (haySesion()) {
+            body.style.visibility = 'visible';
+        } else {
+            alert('Primero inicia sesión para ver esta página.');
+            window.location.replace('login.html');
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', protegerPagina);
+    } else {
+        protegerPagina();
+    }
 })();
