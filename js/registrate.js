@@ -105,10 +105,10 @@ form.addEventListener('submit', async (e) => {
 
     form.reset();
 
-    // Si Supabase ya inició sesión (confirmación por correo desactivada), va al panel
+    // Si Supabase ya inició sesión (confirmación por correo desactivada), va al inicio de sesión
     if (data.session) {
-        mostrar('Cuenta creada. Redirigiendo…', 'ok');
-        setTimeout(() => { window.location.href = 'panel.html'; }, 1500);
+        mostrar('Cuenta creada. Redirigiendo al inicio de sesión…', 'ok');
+        setTimeout(() => { window.location.href = 'login.html'; }, 1500);
         return;
     }
 
