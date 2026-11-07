@@ -47,4 +47,15 @@
 .noti-compartir a:hover{background:#38bdf8;color:#04121c}
 .noti-relacionadas h2{font-size:1.4rem;color:#fff;margin:0 0 18px}
 
+/* ===== Foto grande, análisis y fuente ===== */
+.noti-hero{min-height:320px;display:flex;flex-direction:column;justify-content:flex-end}
+.noti-hero .noti-volver{margin-bottom:auto}
+.noti-analisis{margin-top:28px;padding:20px 22px;border-radius:12px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.25)}
+.noti-analisis strong{display:block;margin-bottom:8px;color:#fff}
+.noti-analisis p{margin:0 0 12px;font-size:.98rem}
+.noti-analisis a{color:#38bdf8;font-weight:700;text-decoration:none}
+.noti-analisis a:hover{text-decoration:underline}
+.noti-fuente{margin-top:22px;font-size:.9rem;color:#9fb3c8}
+.noti-fuente a{color:#38bdf8}
+
 @media (max-width:600px){.noti-hero{padding:32px 20px}.noti-hero-titulo{font-size:1.6rem}.noticias-inicio-head h2{font-size:1.6rem}}
