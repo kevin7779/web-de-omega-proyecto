@@ -24,7 +24,38 @@
       background-color: rgba(6, 13, 20, 0.95) !important;
       backdrop-filter: blur(10px);
     }
-    body { padding-top: 70px !important; }
+    body { padding-top: 70px !important; height: auto !important; min-height: 100vh; overflow-x: hidden; }
+
+    /* Arreglo: el pie de página queda al final del contenido, no flotando encima */
+    footer {
+      position: relative !important;
+      top: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      transform: none !important;
+      width: 100% !important;
+      clear: both;
+      z-index: 1 !important;
+    }
+
+    /* Arreglo: el contenido de la noticia crece con su texto */
+    .noticias-page {
+      display: block !important;
+      position: relative !important;
+      width: 100% !important;
+      max-width: none !important;
+      height: auto !important;
+      max-height: none !important;
+      min-height: 100vh;
+      margin: 0 !important;
+      overflow: visible !important;
+      background: #07111b !important;
+      padding: 40px 20px 70px !important;
+      box-sizing: border-box;
+    }
+    .noticias-page .noti-contenedor { width: 100%; max-width: 1100px; height: auto !important; overflow: visible !important; margin: 0 auto; }
+    .noticias-page .noti-articulo { height: auto !important; overflow: visible !important; }
   </style>
   <script src="js/auth-nav.js?v=2" defer></script>
 </head>
